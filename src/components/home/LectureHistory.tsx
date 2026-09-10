@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowDown, Search } from "lucide-react";
 import history from "@/data/lectures.json";
+import { TitlePeriod } from "./TitlePeriod";
 import styles from "./lecture-history.module.css";
 
 const categories = ["전체", ...new Set(history.lectures.map(lecture => lecture.category))];
@@ -19,7 +20,7 @@ export function LectureHistory() {
   );
 
   return <section id="experience" className={styles.section} aria-labelledby="experience-heading">
-    <div className={styles.heading}><div><h2 id="experience-heading">다양한 조직의 현장에서<br />쌓아온 교육 경험.</h2></div><p>기업과 플랫폼, 대학과 공공기관까지.<br />2022년부터 이어온 강의와 자문 이력을 소개합니다.</p></div>
+    <div className={styles.heading}><div><h2 id="experience-heading">다양한 조직의 현장에서<br />쌓아온 교육 경험<TitlePeriod /></h2></div><p>기업과 플랫폼, 대학과 공공기관까지.<br />2022년부터 이어온 강의와 자문 이력을 소개합니다.</p></div>
     <div className={styles.selected}><div className={styles.selectedIntro}><h3>여러 차례 이어진 교육</h3><p>한 조직에서 반복해 진행한<br />주요 강의 이력입니다.</p></div><div className={styles.repeatList}>{featured.map(lecture => <div key={lecture.organization}><strong>{lecture.organization}</strong><span>{lecture.period}</span><span className={styles.frequency}>{lecture.frequency.replace(" (최다)", "")}</span></div>)}</div></div>
     <div className={styles.advisory}><h3>컨설팅과 교육 자문</h3><div><p><strong>{consulting.organization}</strong><span>{consulting.period} · 컨설팅 1회</span></p>{history.advisory.map(item => <p key={item.organization}><strong>{item.organization}</strong><span>{item.period} · {item.description}</span></p>)}</div></div>
     <details className={styles.archive}>

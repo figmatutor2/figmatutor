@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
 import { CONTACT_URL } from "./contact";
+import { TitlePeriod } from "./TitlePeriod";
 import styles from "./workflow-home.module.css";
 
 const titles = ["AI+Figma 효율화 교육", "워크플로우 효율화 교육", "업무 자동화 교육"];
@@ -19,7 +20,7 @@ export function Hero() {
           <span aria-hidden="true" className={`${styles.heroSubjects} ${paused ? styles.paused : ""}`}>
             <span className={styles.rotatingWords}>
               {titles.map((title, index) => (
-                <span key={title} className={styles.rotatingWord} style={{ animationDelay: `${-((titles.length - index) % titles.length) * 3}s` }}>{title}</span>
+                <span key={title} className={styles.rotatingWord} style={{ animationDelay: `${-((titles.length - index) % titles.length) * 3}s` }}>{title}<TitlePeriod /></span>
               ))}
             </span>
           </span>
