@@ -1,12 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Hero } from "./Hero";
 import { LectureHistory } from "./LectureHistory";
 import history from "@/data/lectures.json";
-import { BrandLogo } from "./BrandLogo";
+import { Footer } from "./Footer";
 import { CONTACT_URL } from "./contact";
 import { TitlePeriod } from "./TitlePeriod";
 import styles from "./workflow-home.module.css";
@@ -53,32 +52,7 @@ export function WorkflowHome() {
       <section id="resources" className={styles.resources} aria-labelledby="resources-heading"><div className={styles.sectionHeading}><div><h2 id="resources-heading">오늘의 업무부터, 한 걸음 더<TitlePeriod /></h2></div><p>실무에서 바로 꺼내 쓰는 지식과 도구.<br />필요한 정보를 찾아보세요.</p></div><a className={styles.resourceCta} href="https://huddling.ai/">실무자료실에서 검색하기 <ArrowUpRight size={19} /></a><div className={styles.resourceList}>{resources.map(([title, description, href]) => <a key={href} href={`https://huddling.ai${href}`}><div><h3>{title}</h3><p>{description}</p></div><ArrowUpRight size={20} /></a>)}</div><div className={styles.community}><p>함께 배우고 실험하는 동료가 필요하다면</p><a href="https://huddling.club/">허들링 클럽 둘러보기 <ArrowUpRight size={17} /></a></div></section>
 
       <section id="contact" className={styles.contact} aria-labelledby="contact-heading"><h2 id="contact-heading">진짜 일을 잘 하는 팀은<br />늘 더 잘하는 방법을 고민합니다<TitlePeriod /></h2><p>지금 겪고 있는 업무의 어려움을 들려주세요.<br />팀에 맞는 교육과 컨설팅의 방향을 함께 찾겠습니다.</p><a href={CONTACT_URL} className={styles.contactButton}>교육·컨설팅 문의하기 <ArrowUpRight size={21} /></a><div className={styles.contactNote}><span>참여 직군 · 개선하고 싶은 업무 · 희망 일정</span><span>문의 폼에 남겨주시면 구체적으로 논의할 수 있습니다.</span></div><a className={styles.email} href="mailto:yiseo@figmatutor.info">yiseo@figmatutor.info</a></section>
-      <footer className={styles.footer}>
-        <div className={styles.footerIdentity}>
-          <Link href="/" aria-label="High 홈"><BrandLogo /></Link>
-          <dl className={styles.businessInfo}>
-            <div><dt>대표자</dt><dd>하이서</dd></div>
-            <div><dt>사업자 등록번호</dt><dd>430-36-01441</dd></div>
-          </dl>
-          <address className={styles.businessAddress}>사업장 주소: 경기도 성남시 중원구 광명로 377 신구대학교 창업관 808호</address>
-          <p className={styles.copyright}>Highstand All right is reserved</p>
-        </div>
-        <nav className={styles.footerSocial} aria-label="SNS 링크">
-          <p>소셜 채널</p>
-          <div>
-            {[
-              ["인스타그램", "https://www.instagram.com/figma_tutor"],
-              ["유튜브", "https://www.youtube.com/@figma_tutor"],
-              ["링크드인", "https://www.linkedin.com/in/figmatutor"],
-              ["쓰레드", "https://www.threads.com/@figma_tutor"],
-            ].map(([label, href]) => (
-              <a key={href} href={href} target="_blank" rel="noopener noreferrer" aria-label={`${label} (새 탭)`}>
-                {label}<ArrowUpRight size={16} aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        </nav>
-      </footer>
+      <Footer />
     </div>
   );
 }

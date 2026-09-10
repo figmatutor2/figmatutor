@@ -9,7 +9,7 @@
 .home a, .home button { -webkit-tap-highlight-color: transparent; }
 .home a:focus-visible, .home button:focus-visible { outline: 3px solid currentColor; outline-offset: 6px; }
 .home section[id] { scroll-margin-top: 110px; }
-.hero, .approach, .programs, .process, .resources, .contact, .footer { padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
+.hero, .approach, .programs, .process, .resources, .contact { padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
 .hero { padding-block: 200px 100px; text-align: center; }
 .heroContent { max-width: 1080px; margin-inline: auto; }
 .heroTitle { font-size: clamp(22px, 6.2vw, 64px); font-weight: 650; line-height: 1.16; letter-spacing: -.055em; }
@@ -84,29 +84,15 @@
 .contactButton:hover { background: oklch(.9 0 265); }
 .contactNote { display: grid; gap: 7px; font-size: 11px; line-height: 1.6; margin-top: 23px; opacity: .85; }
 .email { display: inline-block; font-size: 13px; margin-top: 25px; text-decoration: underline; text-underline-offset: 4px; padding: 12px; }
-.footer { display: flex; align-items: start; justify-content: space-between; gap: 60px; padding-block: 45px; }
-.footerIdentity { min-width: 0; }
-.footerIdentity > a { display: inline-block; }
-.businessInfo { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 23px 0 4px; color: var(--muted); font-size: 12px; line-height: 1.8; }
-.businessInfo > div { display: flex; gap: 8px; }
-.businessInfo dt, .businessInfo dd { margin: 0; }
-.businessAddress { color: var(--muted); font-size: 12px; line-height: 1.9; font-style: normal; }
-.copyright { margin-top: 17px; color: var(--muted); font-size: 11px; line-height: 1.8; }
-.footerSocial { flex-shrink: 0; min-width: 245px; padding-top: 8px; }
-.footerSocial > p { color: var(--muted); font-size: 11px; margin-bottom: 14px; }
-.footerSocial > div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
-.footerSocial a { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; font-size: 13px; }
-.footerSocial a:hover { color: var(--accent); }
 @media (max-width: 900px) {
   .approach { grid-template-columns: 1fr; gap: 25px; padding-block: 65px; }
   .program { grid-template-columns: 35px 1fr; gap: 15px; }
   .programDetails { grid-column: 2; padding: 8px 0 0; }
   .sectionHeading { align-items: start; flex-direction: column; gap: 18px; }
   .processSteps { gap: 22px; }
-  .footer { flex-direction: column; gap: 30px; }
 }
 @media (max-width: 540px) {
-  .hero, .approach, .programs, .process, .resources, .contact, .footer { padding-inline: 22px; }
+  .hero, .approach, .programs, .process, .resources, .contact { padding-inline: 22px; }
   .hero { padding-block: 165px 64px; }
   .intro { font-size: 14px; }
   .actions { gap: 10px; margin-top: 28px; }
@@ -119,7 +105,6 @@
   .processSteps h3 { margin-top: 17px; }
   .contact { padding-block: 65px; }
   .contact h2 { font-size: 33px; }
-  .footerSocial { width: 100%; min-width: 0; }
 }
 .clientStrip { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px max(6vw, calc((100vw - 1280px) / 2)); background: oklch(.942 0 255); border-top: 1px solid var(--line); }
 .clientStrip p { font-size: 13px; line-height: 1.9; color: var(--muted); }
