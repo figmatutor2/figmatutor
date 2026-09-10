@@ -37,7 +37,7 @@
 .sheetFooter { font-size: 10px; margin-top: 21px; opacity: .85; }
 .heroBottom { justify-content: flex-start; gap: 30px; padding: 22px 0; border-top: 1px solid var(--line); font-size: 10px; letter-spacing: .1em; color: var(--muted); }
 .heroBottom a { margin-left: auto; padding: 10px; }
-.approach { display: grid; grid-template-columns: 1fr 2fr; gap: 10%; padding-block: 105px; border-top: 1px solid var(--line); }
+.approach { display: grid; grid-template-columns: 1fr; padding-block: 105px; border-top: 1px solid var(--line); }
 .approach > .eyebrow { color: var(--blue); padding-top: 10px; }
 .home h2 { font-size: clamp(27px, 3vw, 40px); line-height: 1.4; font-weight: 650; letter-spacing: -.045em; }
 .approach p { max-width: 600px; margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 1.9; }
