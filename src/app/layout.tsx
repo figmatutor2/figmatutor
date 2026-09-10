@@ -1,35 +1,26 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const pretendard = localFont({
+  src: "../../public/fonts/PretendardVariable.woff2",
+  variable: "--font-pretendard",
+  display: "swap",
+  weight: "45 920",
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const title = "피그마 튜터 | 워크플로우 교육·컨설팅";
+const description = "디자이너와 IT 팀의 워크플로우를 효율화하는 교육·컨설팅. AI 활용, 디자인 시스템, 직군 간 협업을 실제 업무에 연결합니다.";
 
 export const metadata: Metadata = {
-  title: "피그마튜터 하이서 | Figma Tutor",
-  description:
-    "Figma 교육 전문가 피그마튜터 하이서의 포트폴리오 & 소개 페이지입니다. Figma 튜토리얼, UI/UX 디자인, 디자인 시스템 교육을 제공합니다.",
+  metadataBase: new URL("https://figmatutor.info"),
+  title,
+  description,
+  alternates: { canonical: "https://figmatutor.info/" },
+  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "Figmatutor", locale: "ko_KR", type: "website" },
+  twitter: { card: "summary_large_image", title, description },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
-  return (
-    <html lang="ko" className="dark">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
-  );
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  return <html lang="ko"><body className={pretendard.variable}>{children}</body></html>;
 }

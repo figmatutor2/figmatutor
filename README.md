@@ -1,36 +1,47 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Figmatutor
 
-## Getting Started
+디자이너와 IT 팀의 워크플로우를 개선하는 교육·컨설팅 소개 사이트입니다.
 
-First, run the development server:
+- 운영 도메인: https://figmatutor.info
+- 실무자료실: https://huddling.ai/
+- 커뮤니티: https://huddling.club/
 
-```bash
+## 개발과 검증
+
+```sh
+npm ci
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Next.js 정적 내보내기를 사용합니다. 홈에는 Notion·Supabase 환경변수나 외부 폰트 다운로드가 필요하지 않습니다.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 주요 파일
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- `src/components/home/WorkflowHome.tsx`: 소개, 교육 영역, 자료실, 문의
+- `src/components/home/HomeNavigation.tsx`: 데스크톱·모바일 내비게이션
+- `src/components/home/LectureHistory.tsx`: 분야 필터·조직 검색이 있는 전체 이력
+- `src/data/lectures.json`: 공개 강의 진행 이력 106개와 자문 1건
+- `src/app/layout.tsx`: 도메인, 메타데이터, 로컬 Pretendard 폰트
 
-## Learn More
+기관별 강의 주제나 성과를 추정하지 않고 제공된 조직·시기·횟수·과정 표기를 유지합니다. 문의·미팅 기록은 실적에 포함하지 않습니다.
 
-To learn more about Next.js, take a look at the following resources:
+CSV로 이력을 갱신하려면 로컬 원본 경로를 지정합니다. 원본 CSV 대신 공개 데이터 JSON을 커밋합니다.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```sh
+python3 scripts/sync-lectures.py /path/to/figmatutor_lectures.csv
+npm run build
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## 배포
 
-## Deploy on Vercel
+Vercel의 `yiseos-projects-5e4c1781/figmatutor` 프로젝트에서 이 저장소의 `main` 브랜치를 배포합니다. 프로젝트 루트는 저장소 루트입니다. CLI 배포가 필요하면:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+```sh
+vercel link --yes --project figmatutor --scope yiseos-projects-5e4c1781
+vercel deploy --prod --skip-domain --yes --no-wait
+vercel inspect <deployment-url> --format=json
+vercel promote <deployment-url> --yes
+```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+배포 상태가 READY인지 확인한 뒤 운영 도메인에 반영합니다.

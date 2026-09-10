@@ -39,3 +39,6 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Local source includes inquiry records; publish generated lecture data only.
+figmatutor_lectures.csv
