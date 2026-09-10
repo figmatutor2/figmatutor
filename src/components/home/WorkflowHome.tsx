@@ -30,7 +30,7 @@ export function WorkflowHome() {
         <div className={styles.heroTop}><span className={styles.eyebrow}>WORKFLOW EDUCATION & CONSULTING</span><span className={styles.heroAudience}>디자이너와 IT 팀을 위한 교육·컨설팅</span></div>
         <div className={styles.heroGrid}>
           <div>
-            <h1 id="home-heading">일하는 방식을 바꾸면,<br /><span>가능한 일이 달라집니다.</span></h1>
+            <h1 id="home-heading">교육 다음날 실무에 바로 적용하는<br /><span>AI+Figma 효율화 교육</span></h1>
             <p className={styles.intro}>반복 업무는 줄이고, 중요한 판단에 집중하도록.<br />AI와 Figma를 실무에 연결해<br className={styles.mobileBreak} /> 여러분과 팀의 워크플로우를 함께 설계합니다.</p>
             <div className={styles.actions}><a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의 <ArrowUpRight size={19} /></a><a className={styles.textLink} href="#programs">함께 개선할 수 있는 일 <ArrowDown size={17} /></a></div>
           </div>
