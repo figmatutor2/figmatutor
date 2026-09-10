@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { Approach } from "./Approach";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Hero } from "./Hero";
 import { LectureHistory } from "./LectureHistory";
@@ -31,10 +31,7 @@ export function WorkflowHome() {
 
       <div className={styles.clientStrip}><p>삼성SDS · 카카오 · NHN · 현대자동차 · 카카오뱅크 등<br /><strong>{history.lectures.length}개 조직의 강의 진행 이력</strong></p><a href="#experience">강의·자문 이력 보기 <ArrowDown size={16} /></a></div>
 
-      <section id="approach" className={styles.approach} aria-labelledby="approach-heading">
-
-        <div><h2 id="approach-heading">새로운 도구를 배우는 일을 넘어<br />내 업무가 달라지는 경험으로<TitlePeriod /></h2><p>기능을 아는 것과 현업에서 활용하는 것 사이에는 간격이 있습니다. 어떤 업무를 줄이고 싶은지, 어느 단계에서 협업이 막히는지부터 함께 살펴봅니다.</p><p>교육의 출발점은 여러분의 실제 업무입니다. 팀의 역할과 숙련도에 맞춰 배우고, 직접 적용하고, 계속 사용할 수 있는 방법을 정리합니다.</p><div className={styles.signature}><Image src="/images/team/figma_tutor.png" alt="피그마 튜터 프로필" width={48} height={48} /><div><strong>피그마 튜터</strong><span>워크플로우 교육 · 컨설팅</span></div></div></div>
-      </section>
+      <Approach />
 
       <section id="programs" className={styles.programs} aria-labelledby="programs-heading">
         <div className={styles.sectionHeading}><div><h2 id="programs-heading">디자이너와 IT 팀을 위한<span className={styles.programTitleBreak}> </span>실무 맞춤<span className={styles.desktopTitleSpace}> </span>교육<TitlePeriod /></h2></div><p>팀의 과제와 숙련도에 따라<br />교육과 컨설팅의 범위를 함께 정합니다.</p></div>

@@ -9,7 +9,7 @@
 .home a, .home button { -webkit-tap-highlight-color: transparent; }
 .home a:focus-visible, .home button:focus-visible { outline: 3px solid currentColor; outline-offset: 6px; }
 .home section[id] { scroll-margin-top: 110px; }
-.hero, .approach, .programs, .process, .resources, .contact { padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
+.hero, .programs, .process, .resources, .contact { padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
 .hero { padding-block: 200px 100px; text-align: center; }
 .heroContent { max-width: 1080px; margin-inline: auto; }
 .heroTitle { font-size: clamp(22px, 6.2vw, 64px); font-weight: 650; line-height: 1.16; letter-spacing: -.055em; }
@@ -40,13 +40,7 @@
   .rotatingWord:first-child { opacity: 1; }
   .motionToggle { display: none; }
 }
-.approach { display: grid; grid-template-columns: 1fr; padding-block: 105px; border-top: 1px solid var(--line); }
 .home h2 { font-size: clamp(27px, 3vw, 40px); line-height: 1.4; font-weight: 650; letter-spacing: -.045em; }
-.approach p { max-width: 600px; margin-top: 22px; color: var(--muted); font-size: 16px; line-height: 1.9; }
-.signature { display: flex; gap: 12px; align-items: center; margin-top: 30px; }
-.signature img { border-radius: 50%; object-fit: cover; }
-.signature strong, .signature span { display: block; font-size: 13px; }
-.signature span { color: var(--muted); margin-top: 5px; font-size: 11px; }
 .programs { padding-block: 85px 95px; background: oklch(.942 0 255); }
 .sectionHeading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 45px; }
 .sectionHeading > p { font-size: 14px; line-height: 1.8; color: var(--muted); }
@@ -85,14 +79,13 @@
 .contactNote { display: grid; gap: 7px; font-size: 11px; line-height: 1.6; margin-top: 23px; opacity: .85; }
 .email { display: inline-block; font-size: 13px; margin-top: 25px; text-decoration: underline; text-underline-offset: 4px; padding: 12px; }
 @media (max-width: 900px) {
-  .approach { grid-template-columns: 1fr; gap: 25px; padding-block: 65px; }
   .program { grid-template-columns: 35px 1fr; gap: 15px; }
   .programDetails { grid-column: 2; padding: 8px 0 0; }
   .sectionHeading { align-items: start; flex-direction: column; gap: 18px; }
   .processSteps { gap: 22px; }
 }
 @media (max-width: 540px) {
-  .hero, .approach, .programs, .process, .resources, .contact { padding-inline: 22px; }
+  .hero, .programs, .process, .resources, .contact { padding-inline: 22px; }
   .hero { padding-block: 165px 64px; }
   .intro { font-size: 14px; }
   .actions { gap: 10px; margin-top: 28px; }
