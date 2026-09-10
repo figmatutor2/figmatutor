@@ -84,11 +84,19 @@
 .contactButton:hover { background: oklch(.9 .035 265); }
 .contactNote { display: grid; gap: 7px; font-size: 11px; line-height: 1.6; margin-top: 23px; opacity: .85; }
 .email { display: inline-block; font-size: 13px; margin-top: 25px; text-decoration: underline; text-underline-offset: 4px; padding: 12px; }
-.footer { display: flex; justify-content: space-between; gap: 30px; padding-block: 35px; }
-.footer > a { font-size: 21px; font-weight: 750; letter-spacing: -.06em; }
-.footer > a span { display: block; font-size: 11px; font-weight: 400; color: var(--muted); margin-top: 9px; letter-spacing: -.01em; }
-.footer > div { display: flex; flex-wrap: wrap; align-items: center; gap: 20px; font-size: 11px; color: var(--muted); }
-.footer > div a { padding-block: 12px; }
+.footer { display: flex; align-items: start; justify-content: space-between; gap: 60px; padding-block: 45px; }
+.footerIdentity { min-width: 0; }
+.footerIdentity > a { display: inline-block; }
+.businessInfo { display: flex; flex-wrap: wrap; gap: 6px 22px; margin: 23px 0 4px; color: var(--muted); font-size: 12px; line-height: 1.8; }
+.businessInfo > div { display: flex; gap: 8px; }
+.businessInfo dt, .businessInfo dd { margin: 0; }
+.businessAddress { color: var(--muted); font-size: 12px; line-height: 1.9; font-style: normal; }
+.copyright { margin-top: 17px; color: var(--muted); font-size: 11px; line-height: 1.8; }
+.footerSocial { flex-shrink: 0; min-width: 245px; padding-top: 8px; }
+.footerSocial > p { color: var(--muted); font-size: 11px; margin-bottom: 14px; }
+.footerSocial > div { display: grid; grid-template-columns: 1fr 1fr; gap: 0 24px; }
+.footerSocial a { display: flex; align-items: center; justify-content: space-between; gap: 14px; min-height: 44px; font-size: 13px; }
+.footerSocial a:hover { color: var(--blue); }
 @media (min-width: 1500px) { .heroGrid { padding-block: 80px; } }
 @media (max-width: 900px) {
   .heroGrid { grid-template-columns: 1fr; gap: 45px; padding-block: 45px; }
@@ -99,11 +107,11 @@
   .programDetails { grid-column: 2; padding: 8px 0 0; }
   .sectionHeading { align-items: start; flex-direction: column; gap: 18px; }
   .processSteps { gap: 22px; }
-  .footer { flex-direction: column; }
+  .footer { flex-direction: column; gap: 30px; }
 }
 @media (max-width: 540px) {
   .hero, .approach, .programs, .process, .resources, .contact, .footer { padding-inline: 22px; }
-  .hero { padding-top: 108px; }
+  .hero { padding-top: 128px; }
   .heroAudience { display: none; }
   .heroTop { padding-bottom: 20px; }
   .hero h1 { font-size: clamp(27px, 7.6vw, 40px); }
@@ -121,12 +129,10 @@
   .processSteps h3 { margin-top: 17px; }
   .contact { padding-block: 65px; }
   .contact h2 { font-size: 33px; }
-  .footer > div { gap: 15px; }
+  .footerSocial { width: 100%; min-width: 0; }
 }
 .clientStrip { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px max(6vw, calc((100vw - 1280px) / 2)); background: oklch(.942 .012 255); border-top: 1px solid var(--line); }
 .clientStrip p { font-size: 13px; line-height: 1.9; color: var(--muted); }
 .clientStrip strong { font-weight: 550; color: var(--ink); }
 .clientStrip a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--blue); font-size: 12px; flex-shrink: 0; }
 @media (max-width: 540px) { .clientStrip { padding: 25px 22px; align-items: start; flex-direction: column; gap: 10px; } .clientStrip p { font-size: 12px; } }
-
-.copyright { display: inline-flex; align-items: center; gap: 6px; }
