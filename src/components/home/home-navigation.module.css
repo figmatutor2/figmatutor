@@ -15,5 +15,5 @@
 .skip { position: absolute; top: -70px; background: oklch(.47 .23 265); color: oklch(.979 .006 250); padding: 12px; }
 .skip:focus { top: 8px; }
 @media (max-width: 1080px) { .desktop { display: none; } .contact { margin-left: auto; } .toggle { display: flex; } .row { gap: 12px; min-height: 76px; } }
-@media (max-width: 540px) { .header { padding-inline: 22px; } .row { min-height: 96px; gap: 8px; } .logo span { max-width: 174px; } .logo img { width: 86px; height: auto; } .contact { padding-inline: 11px; gap: 6px; } }
+@media (max-width: 540px) { .header { padding-inline: 22px; } .row { min-height: 96px; gap: 8px; } .logo span { max-width: 174px; } .logo img { width: 140px; max-width: 100%; height: auto; } .contact { padding-inline: 11px; gap: 6px; } }
 @media (min-width: 1081px) { .mobile { display: none; } }

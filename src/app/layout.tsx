@@ -15,8 +15,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://figmatutor.info"),
   title,
   description,
+  icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }] },
   alternates: { canonical: "https://figmatutor.info/" },
-  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "High", locale: "ko_KR", type: "website" },
+  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "Highstand", locale: "ko_KR", type: "website" },
   twitter: { card: "summary_large_image", title, description },
   robots: { index: true, follow: true },
 };

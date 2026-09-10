@@ -21,7 +21,7 @@ Next.js 정적 내보내기를 사용합니다. 홈에는 Notion·Supabase 환�
 - `src/components/home/WorkflowHome.tsx`: 소개, 교육 영역, 자료실, 문의
 - `src/components/home/HomeNavigation.tsx`: 데스크톱·모바일 내비게이션
 - `src/components/home/LectureHistory.tsx`: 분야 필터·조직 검색이 있는 전체 이력
-- `src/data/lectures.json`: 공개 강의 진행 이력 101개와 자문 1건
+- `src/data/lectures.json`: 공개 강의 진행 이력 100개와 자문 1건
 - `src/app/layout.tsx`: 도메인, 메타데이터, 로컬 Pretendard 폰트
 
 기관별 강의 주제나 성과를 추정하지 않고 제공된 조직·시기·횟수·과정 표기를 유지합니다. 문의·미팅 기록은 실적에 포함하지 않습니다. 운영자 요청에 따른 제외·추가 사항은 `src/data/lecture-overrides.json`에 기록하며 CSV 재동기화 시에도 적용합니다.
