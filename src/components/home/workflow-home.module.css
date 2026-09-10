@@ -12,11 +12,11 @@
 .hero, .approach, .programs, .process, .resources, .contact, .footer { padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
 .hero { padding-block: 200px 100px; text-align: center; }
 .heroContent { max-width: 1080px; margin-inline: auto; }
-.heroTitle { font-size: clamp(22px, 6.2vw, 64px); font-weight: 650; line-height: 1.2; letter-spacing: -.055em; }
+.heroTitle { font-size: clamp(22px, 6.2vw, 64px); font-weight: 650; line-height: 1.16; letter-spacing: -.055em; }
 .titlePeriod { color: #2036ff; }
-.heroLead { display: block; }
-.heroSubjects { display: flex; align-items: center; justify-content: center; margin-top: 8.4px; }
-.rotatingWords { display: grid; overflow: hidden; text-align: center; padding-block: .06em .1em; }
+.heroLead { display: block; font-weight: 400; }
+.heroSubjects { display: flex; align-items: center; justify-content: center; margin-top: 6.72px; }
+.rotatingWords { display: grid; overflow: hidden; text-align: center; padding-block: .048em .1em; }
 .rotatingWord { grid-area: 1 / 1; white-space: nowrap; animation: rotateWord 9s cubic-bezier(.22, 1, .36, 1) infinite; }
 .paused .rotatingWord { animation-play-state: paused; }
 @keyframes rotateWord {
