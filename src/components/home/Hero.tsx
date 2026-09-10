@@ -15,8 +15,8 @@ export function Hero() {
     <section className={styles.hero} aria-labelledby="home-heading">
       <div className={styles.heroContent}>
         <h1 id="home-heading" className={styles.heroTitle}>
-          <span className={styles.srOnly}>교육 후 실무에 바로 적용하는 AI+Figma 효율화, 워크플로우 효율화, 업무 자동화 교육</span>
-          <span aria-hidden="true" className={styles.heroLead}>교육 후 실무에 바로 적용하는</span>
+          <span className={styles.srOnly}>실무에 바로 적용하는 AI+Figma 효율화, 워크플로우 효율화, 업무 자동화 교육</span>
+          <span aria-hidden="true" className={styles.heroLead}>실무에 바로 적용하는</span>
           <span aria-hidden="true" className={`${styles.heroSubjects} ${paused ? styles.paused : ""}`}>
             <span className={styles.rotatingWords}>
               {titles.map((title, index) => (

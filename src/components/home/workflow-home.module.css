@@ -97,7 +97,8 @@
   .processSteps { gap: 32px; }
   .processSteps h3 { margin-top: 17px; }
   .contact { padding-block: 65px; }
-  .contact h2 { font-size: 33px; }
+  .contact h2 { font-size: 27px; }
+  .heroTitle { font-size: 27px; }
 }
 .clientStrip { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 28px max(6vw, calc((100vw - 1280px) / 2)); background: oklch(.942 0 255); border-top: 1px solid var(--line); }
 .clientStrip p { font-size: 13px; line-height: 1.9; color: var(--muted); }
