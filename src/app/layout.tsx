@@ -17,8 +17,8 @@ export const metadata: Metadata = {
   description,
   icons: { icon: [{ url: "/favicon.svg", type: "image/svg+xml" }] },
   alternates: { canonical: "https://figmatutor.info/" },
-  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "Highstand", locale: "ko_KR", type: "website" },
-  twitter: { card: "summary_large_image", title, description },
+  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "Highstand", locale: "ko_KR", type: "website", images: [{ url: "/og-highstand.png", width: 1200, height: 630, alt: "HighStand — 디자이너와 IT 팀을 위한 실무 맞춤 교육" }] },
+  twitter: { card: "summary_large_image", title, description, images: ["/og-highstand.png"] },
   robots: { index: true, follow: true },
 };
 
