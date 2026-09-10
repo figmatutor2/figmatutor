@@ -2,7 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ArrowDown, ArrowRight, ArrowUpRight, Check, Plus } from "lucide-react";
+import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Hero } from "./Hero";
 import { LectureHistory } from "./LectureHistory";
 import history from "@/data/lectures.json";
 import { BrandLogo } from "./BrandLogo";
@@ -26,22 +27,7 @@ const resources = [
 export function WorkflowHome() {
   return (
     <div className={styles.home}>
-      <section className={styles.hero} aria-labelledby="home-heading">
-        <div className={styles.heroGrid}>
-          <div>
-            <h1 id="home-heading">교육 다음날 실무에 바로 적용하는<br /><span>AI+Figma 효율화 교육</span></h1>
-            <p className={styles.intro}>반복 업무는 줄이고, 중요한 판단에 집중하도록.<br />AI와 Figma를 실무에 연결해<br className={styles.mobileBreak} /> 여러분과 팀의 워크플로우를 함께 설계합니다.</p>
-            <div className={styles.actions}><a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의 <ArrowUpRight size={19} /></a><a className={styles.textLink} href="#programs">함께 개선할 수 있는 일 <ArrowDown size={17} /></a></div>
-          </div>
-          <div className={styles.workflow} aria-label="업무 파악, 흐름 설계, 실무 적용으로 이어지는 워크플로우 개선 과정">
-            <p className={styles.sheetTitle}>우리 팀의 일,<br />더 나은 흐름으로.</p>
-            <div className={styles.flowStep}><span>01</span><div><strong>업무를 들여다보고</strong><p>반복 작업 · 협업의 병목</p></div><Plus size={16} /></div>
-            <div className={styles.flowStep}><span>02</span><div><strong>맞는 방법을 설계하고</strong><p>AI 활용 · 시스템 · 팀의 기준</p></div><Plus size={16} /></div>
-            <div className={`${styles.flowStep} ${styles.flowFinal}`}><span>03</span><div><strong>현업에서 써봅니다</strong><p>실습 · 피드백 · 업무에 적용</p></div><Check size={18} /></div>
-            <div className={styles.sheetFooter}>도구의 활용에서, 팀의 일하는 방식까지.</div>
-          </div>
-        </div>
-      </section>
+      <Hero />
 
       <div className={styles.clientStrip}><p>삼성SDS · 카카오 · NHN · 현대자동차 · 카카오뱅크 등<br /><strong>{history.lectures.length}개 조직의 강의 진행 이력</strong></p><a href="#experience">강의·자문 이력 보기 <ArrowDown size={16} /></a></div>
 
