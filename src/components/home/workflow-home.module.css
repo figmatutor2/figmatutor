@@ -14,10 +14,9 @@
 .heroContent { max-width: 1080px; margin-inline: auto; }
 .heroTitle { font-weight: 650; line-height: 1.35; letter-spacing: -.055em; }
 .heroLead { display: block; font-size: clamp(23px, 3.7vw, 50px); font-weight: 450; color: var(--muted); }
-.heroSubjects { display: flex; align-items: baseline; justify-content: center; gap: .23em; margin-top: 14px; font-size: clamp(22px, 6.2vw, 64px); }
-.rotatingWords { display: grid; overflow: hidden; text-align: right; padding-block: .1em; }
+.heroSubjects { display: flex; align-items: center; justify-content: center; margin-top: 14px; font-size: clamp(22px, 6.2vw, 64px); }
+.rotatingWords { display: grid; overflow: hidden; text-align: center; padding-block: .1em; }
 .rotatingWord { grid-area: 1 / 1; white-space: nowrap; animation: rotateWord 9s cubic-bezier(.22, 1, .36, 1) infinite; }
-.fixedWord { flex-shrink: 0; }
 .paused .rotatingWord { animation-play-state: paused; }
 @keyframes rotateWord {
   0%, 26% { opacity: 1; transform: translateY(0); }

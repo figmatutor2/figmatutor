@@ -5,7 +5,7 @@ import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
 import { CONTACT_URL } from "./contact";
 import styles from "./workflow-home.module.css";
 
-const titles = ["AI+Figma 효율화", "워크플로우 효율화", "업무 자동화"];
+const titles = ["AI+Figma 효율화 교육", "워크플로우 효율화 교육", "업무 자동화 교육"];
 
 export function Hero() {
   const [paused, setPaused] = useState(false);
@@ -22,7 +22,6 @@ export function Hero() {
                 <span key={title} className={styles.rotatingWord} style={{ animationDelay: `${-((titles.length - index) % titles.length) * 3}s` }}>{title}</span>
               ))}
             </span>
-            <span className={styles.fixedWord}>교육</span>
           </span>
         </h1>
         <p className={styles.intro}>반복 업무는 줄이고, 중요한 판단에 집중하도록.<br />여러분과 팀의 실제 업무에 맞춰 배우고, 바로 적용합니다.</p>
