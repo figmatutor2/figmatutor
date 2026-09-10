@@ -5,8 +5,8 @@
 .desktop { display: flex; gap: 24px; align-items: center; margin-left: auto; font-size: 13px; }
 .desktop a { padding-block: 15px; }
 .desktop a:hover { color: oklch(.47 .23 265); }
-.contact { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 17px; font-size: 12px; border: 1px solid oklch(.76 .016 255); border-radius: 4px; }
-.contact:hover { border-color: currentColor; }
+.contact { flex-shrink: 0; white-space: nowrap; display: flex; align-items: center; gap: 12px; min-height: 44px; padding: 0 17px; font-size: 12px; border: 1px solid oklch(.47 .23 265); border-radius: 4px; background: oklch(.47 .23 265); color: #fff; }
+.contact:hover { background: oklch(.40 .20 265); border-color: oklch(.40 .20 265); }
 .toggle { flex-shrink: 0; display: none; width: 44px; height: 44px; align-items: center; justify-content: center; }
 .mobile { padding-block: 8px 18px; }
 .mobile[hidden] { display: none; }
