@@ -13,31 +13,59 @@ const concerns = [
 ];
 
 export function Approach() {
+  const sceneRef = useRef<HTMLDivElement>(null);
   const bubblesRef = useRef<HTMLUListElement>(null);
 
   useEffect(() => {
     const list = bubblesRef.current;
-    if (!list) return;
+    const scene = sceneRef.current;
+    if (!list || !scene || !("IntersectionObserver" in window)) return;
     const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
-    if (motion.matches || !("IntersectionObserver" in window)) return;
-    list.dataset.animation = "pending";
+    let active = false;
+    let frame = 0;
+    const updateParallax = () => {
+      frame = 0;
+      if (motion.matches) return;
+      const rect = scene.getBoundingClientRect();
+      const progress = (rect.top + rect.height / 2 - window.innerHeight / 2) / ((window.innerHeight + rect.height) / 2);
+      list.style.setProperty("--parallax-y", `${Math.max(-20, Math.min(20, progress * 20))}px`);
+    };
+    const onScroll = () => {
+      if (active && !motion.matches && !frame) frame = requestAnimationFrame(updateParallax);
+    };
+    list.dataset.animation = motion.matches ? "revealed" : "pending";
     const observer = new IntersectionObserver(entries => {
-      if (entries.some(entry => entry.isIntersecting)) {
+      const entry = entries[0];
+      active = entry.isIntersecting;
+      if (motion.matches) return;
+      if (entry.isIntersecting && entry.intersectionRatio >= 0.15) {
         list.dataset.animation = "revealed";
-        observer.disconnect();
+        onScroll();
+      } else if (!entry.isIntersecting) {
+        list.dataset.animation = "pending";
       }
-    }, { threshold: 0.15 });
-    const reduceMotion = () => {
+    }, { threshold: [0, 0.15] });
+    const onMotionChange = () => {
       if (motion.matches) {
+        cancelAnimationFrame(frame);
+        frame = 0;
         list.dataset.animation = "revealed";
-        observer.disconnect();
+        list.style.setProperty("--parallax-y", "0px");
+      } else {
+        list.dataset.animation = active ? "revealed" : "pending";
+        onScroll();
       }
     };
-    observer.observe(list);
-    motion.addEventListener("change", reduceMotion);
+    observer.observe(scene);
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    motion.addEventListener("change", onMotionChange);
     return () => {
       observer.disconnect();
-      motion.removeEventListener("change", reduceMotion);
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      motion.removeEventListener("change", onMotionChange);
     };
   }, []);
 
@@ -52,6 +80,7 @@ export function Approach() {
           </div>
           <SocialLinks className={styles.social} />
         </div>
+        <div ref={sceneRef} className={styles.bubbleScene}>
         <ul ref={bubblesRef} className={styles.bubbles} aria-label="직군별 업무 고민">
           {concerns.map(({ role, image, text }, index) => (
             <li key={role} className={styles.bubble} style={{ animationDelay: `${index * 350}ms` }}>
@@ -60,6 +89,7 @@ export function Approach() {
             </li>
           ))}
         </ul>
+        </div>
       </div>
     </section>
   );
