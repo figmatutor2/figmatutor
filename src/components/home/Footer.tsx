@@ -15,7 +15,7 @@ export function Footer() {
       <div className={styles.inner}>
         <div className={styles.branding}>
           <Link href="/" aria-label="HighStand 홈" className={styles.logo}>
-            <Image src="/images/footer/logo.svg" alt="HighStand" width={238} height={41} />
+            <Image src="/images/footer/logo.svg" alt="HighStand" width={164} height={28} />
           </Link>
           <dl className={styles.details}>
             <div><dt>대표자</dt><dd>하이서</dd></div>
