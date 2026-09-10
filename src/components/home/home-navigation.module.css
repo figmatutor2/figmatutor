@@ -1,6 +1,6 @@
 .header { position: fixed; top: 0; inset-inline: 0; z-index: 50; background: oklch(.979 .006 250); color: oklch(.235 .022 260); border-bottom: 1px solid oklch(.86 .014 255); padding-inline: max(6vw, calc((100vw - 1280px) / 2)); }
 .row { display: flex; align-items: center; gap: 30px; min-height: 88px; }
-.logo { font-size: 25px; letter-spacing: -.07em; font-weight: 780; }
+.logo { display: flex; flex-direction: column; align-items: flex-start; flex-shrink: 0; gap: 2px; }
 .logo span { display: block; margin-top: 2px; font-size: 10px; letter-spacing: .02em; font-weight: 450; color: oklch(.47 .018 260); }
 .desktop { display: flex; gap: 24px; align-items: center; margin-left: auto; font-size: 13px; }
 .desktop a { padding-block: 15px; }

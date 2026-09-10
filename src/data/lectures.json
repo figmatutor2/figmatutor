@@ -13,12 +13,6 @@
       "frequency": "5회+"
     },
     {
-      "organization": "SK",
-      "category": "대기업·계열",
-      "period": "2025-03",
-      "frequency": "2일 과정"
-    },
-    {
       "organization": "SK텔레콤",
       "category": "대기업·계열",
       "period": "2023-11",
@@ -83,12 +77,6 @@
       "category": "대기업·계열",
       "period": "2025-07, 2026-05",
       "frequency": "2회"
-    },
-    {
-      "organization": "이노플레이 (CJ그룹사)",
-      "category": "대기업·계열",
-      "period": "2026-05",
-      "frequency": "1회"
     },
     {
       "organization": "하나금융그룹",
@@ -457,12 +445,6 @@
       "frequency": "1회"
     },
     {
-      "organization": "러닝스푼즈",
-      "category": "교육·HRD",
-      "period": "2024-04",
-      "frequency": "1회"
-    },
-    {
       "organization": "지피터스",
       "category": "교육·HRD",
       "period": "2026-06",
@@ -490,12 +472,6 @@
       "organization": "듀오톤",
       "category": "기타 기업",
       "period": "2023-12",
-      "frequency": "1회"
-    },
-    {
-      "organization": "다빈치",
-      "category": "기타 기업",
-      "period": "2025-04",
       "frequency": "1회"
     },
     {
@@ -635,6 +611,12 @@
       "category": "커뮤니티·컨퍼런스",
       "period": "2025-09",
       "frequency": "행사 참여"
+    },
+    {
+      "organization": "대한상공회의소 부산인재원",
+      "category": "공공·기관",
+      "period": "미상",
+      "frequency": "미상"
     }
   ],
   "advisory": [

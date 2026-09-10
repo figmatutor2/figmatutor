@@ -128,3 +128,5 @@
 .clientStrip strong { font-weight: 550; color: var(--ink); }
 .clientStrip a { display: inline-flex; align-items: center; gap: 12px; min-height: 44px; color: var(--blue); font-size: 12px; flex-shrink: 0; }
 @media (max-width: 540px) { .clientStrip { padding: 25px 22px; align-items: start; flex-direction: column; gap: 10px; } .clientStrip p { font-size: 12px; } }
+
+.copyright { display: inline-flex; align-items: center; gap: 6px; }

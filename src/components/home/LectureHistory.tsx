@@ -27,7 +27,7 @@ export function LectureHistory() {
       <div className={styles.archiveBody}>
         <div className={styles.filters} role="group" aria-label="강의 이력 분야 필터">{categories.map(item => <button type="button" key={item} aria-pressed={category === item} onClick={() => setCategory(item)}>{item}</button>)}</div>
         <div className={styles.searchRow}><label className={styles.search}><Search size={17} aria-hidden="true" /><span className={styles.srOnly}>조직명으로 강의 이력 검색</span><input type="search" placeholder="조직명으로 찾아보기" value={query} onChange={event => setQuery(event.target.value)} /></label><p role="status" aria-live="polite">{filtered.length}개 기록</p></div>
-        <ul className={styles.records}>{filtered.map(lecture => <li key={lecture.organization}><div><strong>{lecture.organization}</strong><span>{lecture.category}</span></div><span>{lecture.period === "미상" ? "시기 미기재" : lecture.period}</span><span>{lecture.frequency.replace(" (최다)", "")}</span></li>)}</ul>
+        <ul className={styles.records}>{filtered.map(lecture => <li key={lecture.organization}><div><strong>{lecture.organization}</strong><span>{lecture.category}</span></div><span>{lecture.period === "미상" ? "시기 미기재" : lecture.period}</span><span>{lecture.frequency === "미상" ? "횟수 미기재" : lecture.frequency.replace(" (최다)", "")}</span></li>)}</ul>
         {filtered.length === 0 && <div className={styles.empty}><p>조건에 맞는 강의 이력이 없습니다.</p><button type="button" onClick={() => { setCategory("전체"); setQuery(""); }}>전체 이력 보기</button></div>}
         <p className={styles.note}>조직별로 정리한 이력입니다. 횟수와 과정 표기는 진행 형태에 따라 다르며, 전체 강의 횟수를 의미하지 않습니다.</p>
       </div>

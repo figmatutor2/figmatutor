@@ -1,0 +1,16 @@
+{
+  "excludeOrganizations": [
+    "이노플레이 (CJ그룹사)",
+    "SK",
+    "러닝스푼즈",
+    "다빈치"
+  ],
+  "addOrganizations": [
+    {
+      "organization": "대한상공회의소 부산인재원",
+      "category": "공공·기관",
+      "period": "미상",
+      "frequency": "미상"
+    }
+  ]
+}

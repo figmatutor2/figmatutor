@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title,
   description,
   alternates: { canonical: "https://figmatutor.info/" },
-  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "Figmatutor", locale: "ko_KR", type: "website" },
+  openGraph: { title, description, url: "https://figmatutor.info/", siteName: "High", locale: "ko_KR", type: "website" },
   twitter: { card: "summary_large_image", title, description },
   robots: { index: true, follow: true },
 };

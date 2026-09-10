@@ -5,6 +5,8 @@ import Link from "next/link";
 import { ArrowDown, ArrowRight, ArrowUpRight, Check, Plus } from "lucide-react";
 import { LectureHistory } from "./LectureHistory";
 import history from "@/data/lectures.json";
+import { BrandLogo } from "./BrandLogo";
+import { CONTACT_URL } from "./contact";
 import styles from "./workflow-home.module.css";
 
 const programs = [
@@ -20,7 +22,6 @@ const resources = [
   ["AI 리포트", "실무에 연결해 읽는 AI 소식", "/ai-report"],
   ["키오스크 레퍼런스", "실제 사용 맥락을 살펴보는 화면 사례", "/kiosk-food"],
 ];
-const contactHref = `mailto:yiseo@figmatutor.info?subject=${encodeURIComponent("교육·워크플로우 컨설팅 문의")}&body=${encodeURIComponent("안녕하세요. 교육·컨설팅을 문의드립니다.\n\n소속 / 담당 업무:\n참여 직군 / 인원:\n현재 어려운 업무:\n희망하는 변화:\n희망 일정 / 진행 방식:\n")}`;
 
 export function WorkflowHome() {
   return (
@@ -31,7 +32,7 @@ export function WorkflowHome() {
           <div>
             <h1 id="home-heading">일하는 방식을 바꾸면,<br /><span>가능한 일이 달라집니다.</span></h1>
             <p className={styles.intro}>반복 업무는 줄이고, 중요한 판단에 집중하도록.<br />AI와 Figma를 실무에 연결해<br className={styles.mobileBreak} /> 여러분과 팀의 워크플로우를 함께 설계합니다.</p>
-            <div className={styles.actions}><a className={styles.primary} href="#contact">교육·컨설팅 문의 <ArrowUpRight size={19} /></a><a className={styles.textLink} href="#programs">함께 개선할 수 있는 일 <ArrowDown size={17} /></a></div>
+            <div className={styles.actions}><a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의 <ArrowUpRight size={19} /></a><a className={styles.textLink} href="#programs">함께 개선할 수 있는 일 <ArrowDown size={17} /></a></div>
           </div>
           <div className={styles.workflow} aria-label="업무 파악, 흐름 설계, 실무 적용으로 이어지는 워크플로우 개선 과정">
             <div className={styles.sheetHeader}><span>OUR WAY OF WORKING</span><span>↗</span></div>
@@ -54,7 +55,7 @@ export function WorkflowHome() {
 
       <section id="programs" className={styles.programs} aria-labelledby="programs-heading">
         <div className={styles.sectionHeading}><div><span className={styles.eyebrow}>02 / WHAT WE CAN WORK ON</span><h2 id="programs-heading">어떤 일을 더 잘하고 싶으세요?</h2></div><p>팀의 과제와 숙련도에 따라<br />교육과 컨설팅의 범위를 함께 정합니다.</p></div>
-        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={contactHref}>이 주제로 문의하기 <ArrowUpRight size={16} /></a></div></article>)}</div>
+        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={CONTACT_URL}>이 주제로 문의하기 <ArrowUpRight size={16} /></a></div></article>)}</div>
       </section>
 
       <LectureHistory />
@@ -67,8 +68,8 @@ export function WorkflowHome() {
 
       <section id="resources" className={styles.resources} aria-labelledby="resources-heading"><div className={styles.sectionHeading}><div><span className={styles.eyebrow}>05 / OPEN RESOURCES</span><h2 id="resources-heading">오늘의 업무부터, 한 걸음 더.</h2></div><p>실무에서 바로 꺼내 쓰는 지식과 도구.<br />필요한 정보를 찾아보세요.</p></div><a className={styles.resourceCta} href="https://huddling.ai/">실무자료실에서 검색하기 <ArrowUpRight size={19} /></a><div className={styles.resourceList}>{resources.map(([title, description, href]) => <a key={href} href={`https://huddling.ai${href}`}><div><h3>{title}</h3><p>{description}</p></div><ArrowUpRight size={20} /></a>)}</div><div className={styles.community}><p>함께 배우고 실험하는 동료가 필요하다면</p><a href="https://huddling.club/">허들링 클럽 둘러보기 <ArrowUpRight size={17} /></a></div></section>
 
-      <section id="contact" className={styles.contact} aria-labelledby="contact-heading"><span className={styles.eyebrow}>LET’S WORK BETTER, TOGETHER</span><h2 id="contact-heading">우리 팀의 일하는 방식,<br />어디부터 바꿔볼까요?</h2><p>지금 겪고 있는 업무의 어려움을 들려주세요.<br />팀에 맞는 교육과 컨설팅의 방향을 함께 찾겠습니다.</p><a href={contactHref} className={styles.contactButton}>교육·컨설팅 문의하기 <ArrowUpRight size={21} /></a><div className={styles.contactNote}><span>참여 직군 · 개선하고 싶은 업무 · 희망 일정</span><span>위 내용을 함께 보내주시면 구체적으로 논의할 수 있습니다.</span></div><a className={styles.email} href="mailto:yiseo@figmatutor.info">yiseo@figmatutor.info</a></section>
-      <footer className={styles.footer}><Link href="/">Figmatutor<span>더 나은 일의 흐름을 함께 만듭니다.</span></Link><div><a href="https://huddling.ai/privacy">개인정보처리방침</a><a href="https://huddling.ai/terms">이용약관</a><a href="https://huddling.ai/copyright">저작권 정책</a><span>© Figmatutor</span></div></footer>
+      <section id="contact" className={styles.contact} aria-labelledby="contact-heading"><span className={styles.eyebrow}>LET’S WORK BETTER, TOGETHER</span><h2 id="contact-heading">우리 팀의 일하는 방식,<br />어디부터 바꿔볼까요?</h2><p>지금 겪고 있는 업무의 어려움을 들려주세요.<br />팀에 맞는 교육과 컨설팅의 방향을 함께 찾겠습니다.</p><a href={CONTACT_URL} className={styles.contactButton}>교육·컨설팅 문의하기 <ArrowUpRight size={21} /></a><div className={styles.contactNote}><span>참여 직군 · 개선하고 싶은 업무 · 희망 일정</span><span>문의 폼에 남겨주시면 구체적으로 논의할 수 있습니다.</span></div><a className={styles.email} href="mailto:yiseo@figmatutor.info">yiseo@figmatutor.info</a></section>
+      <footer className={styles.footer}><Link href="/" aria-label="High 홈"><BrandLogo /><span>더 나은 일의 흐름을 함께 만듭니다.</span></Link><div><a href="https://huddling.ai/privacy">개인정보처리방침</a><a href="https://huddling.ai/terms">이용약관</a><a href="https://huddling.ai/copyright">저작권 정책</a><span className={styles.copyright}>© <BrandLogo compact /></span></div></footer>
     </div>
   );
 }
