@@ -77,7 +77,7 @@
 .resourceList a:hover h3 { text-decoration: underline; text-underline-offset: 5px; }
 .community { display: flex; justify-content: space-between; flex-wrap: wrap; align-items: center; gap: 12px; border-top: 1px solid oklch(.4 .025 265); padding-top: 28px; margin-top: 20px; font-size: 13px; }
 .community a { display: flex; gap: 10px; align-items: center; min-height: 44px; }
-.contact { padding-block: 90px; background: var(--blue); color: var(--paper); text-align: center; }
+.contact { padding-block: 90px; background: #171c26; color: var(--paper); text-align: center; }
 .contact h2 { font-size: clamp(33px, 4vw, 52px); margin: 24px 0; }
 .contact > p { font-size: 15px; line-height: 1.9; opacity: .87; }
 .contactButton { background: var(--paper); color: var(--blue); padding: 0 25px; margin-top: 32px; border-radius: 4px; }

@@ -26,6 +26,8 @@ if overrides_path.exists():
     overrides = json.loads(overrides_path.read_text(encoding="utf-8"))
     excluded = set(overrides["excludeOrganizations"])
     lectures = [item for item in lectures if item["organization"] not in excluded]
+    updates = overrides.get("updateOrganizations", {})
+    lectures = [{**item, **updates.get(item["organization"], {})} for item in lectures]
     names = {item["organization"] for item in lectures}
     for item in overrides["addOrganizations"]:
         if item["organization"] not in names and item["organization"] not in excluded:
