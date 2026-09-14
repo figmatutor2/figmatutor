@@ -1,3 +1,4 @@
+import { FloatingCta } from "@/components/home/FloatingCta";
 import { HomeNavigation } from "@/components/home/HomeNavigation";
 import { WorkflowHome } from "@/components/home/WorkflowHome";
 
@@ -6,6 +7,7 @@ export default function HomePage() {
     <>
       <HomeNavigation />
       <main id="main-content"><WorkflowHome /></main>
+      <FloatingCta />
     </>
   );
 }
