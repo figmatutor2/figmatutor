@@ -23,12 +23,12 @@ export function About() {
         </figure>
         <div className={styles.copy}>
           <span className={styles.eyebrow}>대표 소개</span>
-          <h2 id="about-heading">
+          <h1 id="about-heading">
             {profile.alias}
             <br />
             {profile.name}
             <TitlePeriod />
-          </h2>
+          </h1>
           <p className={styles.role}>{profile.role}</p>
           <p className={styles.intro}>{profile.intro}</p>
           <SocialLinks className={styles.social} />

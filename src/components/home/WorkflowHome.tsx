@@ -2,7 +2,6 @@
 
 import { useEffect, useRef } from "react";
 import { Approach } from "./Approach";
-import { About } from "./About";
 import Link from "next/link";
 import { programs } from "./programs";
 import { ArrowDown, ArrowRight } from "lucide-react";
@@ -79,8 +78,6 @@ export function WorkflowHome() {
       <div className={styles.clientStrip}><p>삼성SDS · 카카오 · NHN · 현대자동차 · 카카오뱅크 등<br /><strong>{history.lectures.length}개 조직의 강의 진행 이력</strong></p><a href="#experience">강의·자문 이력 보기 <ArrowDown size={16} /></a></div>
 
       <Approach />
-
-      <About />
 
       <section id="programs" className={styles.programs} aria-labelledby="programs-heading">
         <div className={styles.sectionHeading}><div><h2 id="programs-heading">AI 기술을, 바로 손에 쥘 수 있는<br />워크플로우로 배우고 바로 적용해보세요<TitlePeriod /></h2></div><p>우리 팀의 실제 업무로 배우고,<br />현업에 적용할 AI 워크플로우를 만듭니다.</p></div>
