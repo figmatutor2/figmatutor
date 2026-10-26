@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ArrowDown, ArrowUpRight, Pause, Play } from "lucide-react";
+import { Pause, Play } from "lucide-react";
 import { CONTACT_URL } from "./contact";
 import { TitlePeriod } from "./TitlePeriod";
 import styles from "./workflow-home.module.css";
@@ -27,8 +27,8 @@ export function Hero() {
         </h1>
         <p className={styles.intro}>반복 업무는 줄이고, 중요한 판단에 집중하도록.<br />여러분과 팀의 실제 업무에 맞춰 배우고, 바로 적용합니다.</p>
         <div className={styles.actions}>
-          <a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의 <ArrowUpRight size={19} /></a>
-          <a className={styles.secondary} href="#programs">교육 프로그램 살펴보기 <ArrowDown size={18} /></a>
+          <a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의</a>
+          <a className={styles.secondary} href="#programs">교육 프로그램 살펴보기</a>
         </div>
         <button className={styles.motionToggle} type="button" aria-label={paused ? "제목 자동 전환 재생" : "제목 자동 전환 일시정지"} onClick={() => setPaused(value => !value)}>
           {paused ? <Play size={14} aria-hidden="true" /> : <Pause size={14} aria-hidden="true" />}

@@ -183,6 +183,8 @@
 .records {
   list-style: none;
   padding: 0;
+  /* Keep the first row clear of the fixed header when paging scrolls the list into view. */
+  scroll-margin-top: 110px;
 }
 .records li {
   display: grid;
