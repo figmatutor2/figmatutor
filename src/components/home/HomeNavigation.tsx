@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
-import { ArrowUpRight, Menu, X } from "lucide-react";
+import { ArrowRight, Menu, X } from "lucide-react";
 import { BrandLogo } from "./BrandLogo";
 import { CONTACT_URL } from "./contact";
 import styles from "./home-navigation.module.css";
@@ -30,6 +30,6 @@ export function HomeNavigation() {
       <a className={styles.contact} href={CONTACT_URL}>문의하기</a>
       <button id="home-menu-toggle" className={styles.toggle} aria-label={open ? "메뉴 닫기" : "메뉴 열기"} aria-expanded={open} aria-controls="home-mobile-nav" onClick={() => setOpen(!open)}>{open ? <X size={22} /> : <Menu size={22} />}</button>
     </div>
-    <nav id="home-mobile-nav" aria-label="모바일 주 메뉴" className={styles.mobile} hidden={!open}>{links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}<ArrowUpRight size={17} /></a>)}<a href={CONTACT_URL} onClick={() => setOpen(false)}>교육·컨설팅 문의<ArrowUpRight size={17} /></a></nav>
+    <nav id="home-mobile-nav" aria-label="모바일 주 메뉴" className={styles.mobile} hidden={!open}>{links.map(([label, href]) => <a key={href} href={href} onClick={() => setOpen(false)}>{label}<ArrowRight size={17} /></a>)}<a href={CONTACT_URL} onClick={() => setOpen(false)}>교육·컨설팅 문의<ArrowRight size={17} /></a></nav>
   </header>;
 }

@@ -192,6 +192,8 @@
   }
 }
 .home h2 {
+  opacity: var(--reveal, 1);
+  transform: translateY(calc((1 - var(--reveal, 1)) * var(--spacing-lg)));
   font-size: var(--text-display);
   line-height: var(--leading-display);
   font-weight: var(--font-weight-semibold);
@@ -295,6 +297,8 @@
   padding: 0;
 }
 .processSteps li {
+  opacity: var(--reveal, 1);
+  transform: translateX(calc((var(--reveal, 1) - 1) * var(--spacing-lg)));
   border-top: 1px solid var(--line);
   padding-top: var(--spacing-lg);
 }

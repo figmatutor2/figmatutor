@@ -1,9 +1,10 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { Approach } from "./Approach";
 import Link from "next/link";
 import { programs } from "./programs";
-import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
+import { ArrowDown, ArrowRight } from "lucide-react";
 import { Hero } from "./Hero";
 import { LectureHistory } from "./LectureHistory";
 import history from "@/data/lectures.json";
@@ -22,9 +23,56 @@ const resources = [
   ["키오스크 레퍼런스", "실제 사용 맥락을 살펴보는 화면 사례", "/kiosk-food"],
 ];
 
+// Scroll distance (as a share of the viewport) over which an element fades in.
+const REVEAL_RANGE = 0.35;
+const STEP_STAGGER = 0.3;
+
 export function WorkflowHome() {
+  const homeRef = useRef<HTMLDivElement>(null);
+
+  // Tie section heading and process step opacity to scroll position.
+  useEffect(() => {
+    const home = homeRef.current;
+    if (!home) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const headings = Array.from(home.querySelectorAll<HTMLElement>("h2"));
+    const stepList = home.querySelector<HTMLElement>(`.${styles.processSteps}`);
+    const steps = stepList ? Array.from(stepList.children) as HTMLElement[] : [];
+    const progress = (el: HTMLElement) => {
+      const top = el.getBoundingClientRect().top;
+      return Math.max(0, Math.min(1, (window.innerHeight - top) / (window.innerHeight * REVEAL_RANGE)));
+    };
+    let frame = 0;
+    const update = () => {
+      frame = 0;
+      if (motion.matches) {
+        [...headings, ...steps].forEach(el => el.style.removeProperty("--reveal"));
+        return;
+      }
+      headings.forEach(el => el.style.setProperty("--reveal", String(progress(el))));
+      if (stepList) {
+        // Later steps start once earlier ones are underway, so they appear left to right.
+        const listProgress = progress(stepList) * (1 + STEP_STAGGER * (steps.length - 1));
+        steps.forEach((el, i) => el.style.setProperty("--reveal", String(Math.max(0, Math.min(1, listProgress - STEP_STAGGER * i)))));
+      }
+    };
+    const onScroll = () => {
+      if (!frame) frame = requestAnimationFrame(update);
+    };
+    update();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    window.addEventListener("resize", onScroll);
+    motion.addEventListener("change", onScroll);
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener("scroll", onScroll);
+      window.removeEventListener("resize", onScroll);
+      motion.removeEventListener("change", onScroll);
+    };
+  }, []);
+
   return (
-    <div className={styles.home}>
+    <div ref={homeRef} className={styles.home}>
       <Hero />
 
       <div className={styles.clientStrip}><p>삼성SDS · 카카오 · NHN · 현대자동차 · 카카오뱅크 등<br /><strong>{history.lectures.length}개 조직의 강의 진행 이력</strong></p><a href="#experience">강의·자문 이력 보기 <ArrowDown size={16} /></a></div>
@@ -44,7 +92,7 @@ export function WorkflowHome() {
         ["적용과 정리", "계속 쓸 수 있게 남깁니다", "실무에서 적용하는 방법을 배워보고, 계속 사용할 수 있는 템플릿과 가이드로 남깁니다. 컨설팅 등 추가 후속 지원 범위도 협의 가능합니다."],
       ].map(([label, title, description], i) => <li key={label}><div className={styles.processLabel}><span>0{i + 1} / {label}</span>{i < 2 && <ArrowRight size={20} />}</div><h3>{title}</h3><p>{description}</p></li>)}</ol></section>
 
-      <section id="resources" className={styles.resources} aria-labelledby="resources-heading"><div className={styles.sectionHeading}><div><h2 id="resources-heading">무료 디자인 리소스와 AI 팁으로<br />한단계 더 성장해보세요<TitlePeriod /></h2></div><p>실무에서 바로 꺼내 쓰는 지식과 도구.<br />필요한 정보를 찾아보세요.</p></div><a className={styles.resourceCta} href="https://huddling.ai/">실무자료실에서 검색하기</a><div className={styles.resourceList}>{resources.map(([title, description, href]) => <a key={href} href={`https://huddling.ai${href}`}><div><h3>{title}</h3><p>{description}</p></div><ArrowUpRight size={20} /></a>)}</div><div className={styles.community}><p>함께 배우고 실험하는 동료가 필요하다면</p><a href="https://huddling.club/">허들링 클럽 둘러보기 <ArrowUpRight size={17} /></a></div></section>
+      <section id="resources" className={styles.resources} aria-labelledby="resources-heading"><div className={styles.sectionHeading}><div><h2 id="resources-heading">무료 디자인 리소스와 AI 팁으로<br />한단계 더 성장해보세요<TitlePeriod /></h2></div><p>실무에서 바로 꺼내 쓰는 지식과 도구.<br />필요한 정보를 찾아보세요.</p></div><a className={styles.resourceCta} href="https://huddling.ai/">실무자료실에서 검색하기</a><div className={styles.resourceList}>{resources.map(([title, description, href]) => <a key={href} href={`https://huddling.ai${href}`}><div><h3>{title}</h3><p>{description}</p></div><ArrowRight size={20} /></a>)}</div><div className={styles.community}><p>함께 배우고 실험하는 동료가 필요하다면</p><a href="https://huddling.club/">허들링 클럽 둘러보기 <ArrowRight size={17} /></a></div></section>
 
       <EducationFaq />
 

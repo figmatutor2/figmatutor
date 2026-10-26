@@ -14,6 +14,18 @@
       "category": "공공·기관",
       "period": "2026-08",
       "frequency": "미상"
+    },
+    {
+      "organization": "Friends of Figma Seoul",
+      "category": "커뮤니티·컨퍼런스",
+      "period": "2025-08 ~ 2026-04",
+      "frequency": "리더 · 행사 4회 운영"
+    },
+    {
+      "organization": "Figma",
+      "category": "커뮤니티·컨퍼런스",
+      "period": "2026-08",
+      "frequency": "공식 메이커톤 운영"
     }
   ],
   "updateOrganizations": {
