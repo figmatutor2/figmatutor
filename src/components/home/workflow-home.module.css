@@ -229,7 +229,9 @@
   letter-spacing: var(--tracking-display);
 }
 .topic {
+  display: block;
   font-size: var(--text-fine);
+  line-height: var(--leading-snug);
   color: var(--accent);
   font-weight: var(--font-weight-semibold);
 }
@@ -252,6 +254,7 @@
 .programDetails > span {
   display: block;
   font-size: var(--text-micro);
+  line-height: var(--leading-snug);
   color: var(--muted);
 }
 .programDetails p {
@@ -630,5 +633,26 @@
 @media (max-width: 540px) {
   .faq {
     padding: var(--spacing-section-sm) var(--gutter-sm);
+  }
+}
+
+/* Reveal the inquiry CTA on row hover/focus for mouse users; touch devices keep it visible. */
+@media (hover: hover) and (pointer: fine) {
+  .programDetails a {
+    opacity: 0;
+    transition:
+      opacity var(--duration-fast) ease,
+      background-color var(--duration-fast) ease,
+      border-color var(--duration-fast) ease,
+      transform var(--duration-fast) ease;
+  }
+  .program:hover .programDetails a,
+  .program:focus-within .programDetails a {
+    opacity: 1;
+  }
+}
+@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
+  .programDetails a {
+    transition: none;
   }
 }

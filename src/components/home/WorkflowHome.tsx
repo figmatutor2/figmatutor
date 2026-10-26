@@ -33,7 +33,7 @@ export function WorkflowHome() {
 
       <section id="programs" className={styles.programs} aria-labelledby="programs-heading">
         <div className={styles.sectionHeading}><div><h2 id="programs-heading">디자이너와 IT 팀을 위한<span className={styles.programTitleBreak}> </span>실무 맞춤<span className={styles.desktopTitleSpace}> </span>교육<TitlePeriod /></h2></div><p>우리 팀의 실제 업무로 배우고,<br />현업에 적용할 AI 워크플로우를 만듭니다.</p></div>
-        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.href ? <Link className={styles.programTitleLink} href={program.href}><span style={{ whiteSpace: "pre-line" }}>{program.title}</span><ArrowUpRight size={21} aria-hidden="true" /></Link> : program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={CONTACT_URL}>이 주제로 문의하기</a></div></article>)}</div>
+        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.href ? <Link className={styles.programTitleLink} href={program.href}><span style={{ whiteSpace: "pre-line" }}>{program.title}</span></Link> : program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={CONTACT_URL}>이 주제로 문의하기</a></div></article>)}</div>
       </section>
 
       <LectureHistory />
