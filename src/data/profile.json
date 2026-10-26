@@ -1,0 +1,57 @@
+{
+  "name": "하이서",
+  "alias": "피그마 튜터",
+  "role": "하이스탠드 대표 · UI/UX 프로덕트 디자이너",
+  "intro": "10년 넘게 웹과 프로덕트 디자인 현장에서 일했습니다. 2021년부터 디자이너와 IT 실무자가 Figma와 AI를 실제 업무에 연결하도록 돕고 있습니다.",
+  "education": "국민대학교 테크노디자인전문대학원 AI디자인랩 박사과정",
+  "career": [
+    {
+      "period": "2024 — 현재",
+      "organization": "하이스탠드",
+      "role": "대표 · UI/UX 프로덕트 디자이너"
+    },
+    {
+      "period": "2022 — 2023",
+      "organization": "그립컴퍼니",
+      "role": "UI/UX 프로덕트 디자이너"
+    },
+    {
+      "period": "2021 — 2022",
+      "organization": "AViD ENF",
+      "role": "UI/UX 프로덕트 디자이너"
+    },
+    {
+      "period": "2019 — 2020",
+      "organization": "에스티유니타스",
+      "role": "UI/UX 프로덕트 디자이너"
+    },
+    {
+      "period": "2014 — 2019",
+      "organization": "더피알커뮤니케이션",
+      "role": "웹 디자이너"
+    }
+  ],
+  "books": [
+    {
+      "year": "2026",
+      "title": "된다! 피그마 디자인 10분 레시피",
+      "publisher": "이지스퍼블리싱 · 공저"
+    },
+    {
+      "year": "2025",
+      "title": "일 잘러의 무기 피그마",
+      "publisher": "밀리의 서재 밀리로드 연재"
+    },
+    {
+      "year": "2023",
+      "title": "피그마로 시작하는 UI 디자인",
+      "publisher": "시대인"
+    },
+    {
+      "year": "2022",
+      "title": "Figma 핵심만 빠르게",
+      "publisher": "탈잉 전자책"
+    }
+  ],
+  "courses": ["패스트캠퍼스", "콜로소", "코멘토"]
+}

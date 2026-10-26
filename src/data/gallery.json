@@ -1,0 +1,92 @@
+{
+  "photos": [
+    {
+      "src": "/images/gallery/2026-08-hackathon.webp",
+      "width": 1600,
+      "height": 900,
+      "organization": "피그마 해커톤",
+      "period": "2026.08",
+      "alt": "해커톤 미션을 안내하는 화면 앞에서 참가자들에게 진행 방식을 설명하는 모습"
+    },
+    {
+      "src": "/images/gallery/2026-07-nhn.webp",
+      "width": 1200,
+      "height": 1600,
+      "organization": "NHN",
+      "period": "2026.07",
+      "alt": "디자인 시스템 기반 바이브 코딩 강의를 연단에서 진행하는 모습"
+    },
+    {
+      "src": "/images/gallery/2026-06-vibe-coding.webp",
+      "width": 1600,
+      "height": 1200,
+      "organization": "KT 강의",
+      "period": "2026.06",
+      "alt": "AI와 바이브 코딩으로 디자인 시스템을 효율화하는 강의를 진행하는 모습"
+    },
+    {
+      "src": "/images/gallery/2026-04-nh.webp",
+      "width": 1600,
+      "height": 1200,
+      "organization": "NH투자증권",
+      "period": "2026.04",
+      "alt": "NH투자증권 바이브 코딩 QA 세션에서 수강생 질문에 답하는 모습"
+    },
+    {
+      "src": "/images/gallery/2026-04-cj.webp",
+      "width": 1600,
+      "height": 900,
+      "organization": "CJ",
+      "period": "2026.04",
+      "alt": "규모가 큰 조직에서 Figma를 쓰는 이유를 설명하는 CJ 강의 현장"
+    },
+    {
+      "src": "/images/gallery/2025-10-kiwoom.webp",
+      "width": 1600,
+      "height": 1200,
+      "organization": "키움증권",
+      "period": "2025.10",
+      "alt": "키움증권 강의를 마치며 수강생들이 설문 QR 코드를 확인하는 모습"
+    },
+    {
+      "src": "/images/gallery/2025-07-lecture.webp",
+      "width": 1440,
+      "height": 1081,
+      "organization": "한국디자인진흥원",
+      "period": "2025.07",
+      "alt": "한국디자인진흥원 강의장에서 수강생들이 노트북으로 실습하는 모습"
+    },
+    {
+      "src": "/images/gallery/2025-02-lecture.webp",
+      "width": 1080,
+      "height": 1440,
+      "organization": "devcon",
+      "period": "2025.02",
+      "alt": "공통 라이브러리 분리 방법을 슬라이드로 설명하는 모습"
+    },
+    {
+      "src": "/images/gallery/2024-08-seminar.webp",
+      "width": 1600,
+      "height": 900,
+      "organization": "Figma 업데이트 리캡",
+      "period": "2024.08",
+      "alt": "대형 스크린 앞에서 마이크를 들고 발표하는 모습"
+    },
+    {
+      "src": "/images/gallery/2024-07-workshop.webp",
+      "width": 665,
+      "height": 1182,
+      "organization": "모션 강의",
+      "period": "2024.07",
+      "alt": "수강생들 앞에서 손짓하며 설명하는 워크숍 현장"
+    },
+    {
+      "src": "/images/gallery/2023-11-skt.webp",
+      "width": 1600,
+      "height": 1200,
+      "organization": "SK텔레콤",
+      "period": "2023.11",
+      "alt": "SK텔레콤 기획자를 위한 피그마 원데이 클래스를 진행하는 모습"
+    }
+  ]
+}

@@ -3,6 +3,7 @@
 import { useRef, useState } from "react";
 import { ArrowDown, ChevronLeft, ChevronRight, Search } from "lucide-react";
 import history from "@/data/lectures.json";
+import { LectureGallery } from "./LectureGallery";
 import { TitlePeriod } from "./TitlePeriod";
 import styles from "./lecture-history.module.css";
 
@@ -101,6 +102,7 @@ export function LectureHistory() {
           ))}
         </div>
       </div>
+      <LectureGallery />
       <div className={styles.advisory}>
         <h3>컨설팅과 교육 자문</h3>
         <div>
