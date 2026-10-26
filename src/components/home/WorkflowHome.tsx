@@ -1,6 +1,8 @@
 "use client";
 
 import { Approach } from "./Approach";
+import Link from "next/link";
+import { programs } from "./programs";
 import { ArrowDown, ArrowRight, ArrowUpRight } from "lucide-react";
 import { Hero } from "./Hero";
 import { LectureHistory } from "./LectureHistory";
@@ -8,13 +10,9 @@ import history from "@/data/lectures.json";
 import { Footer } from "./Footer";
 import { CONTACT_URL } from "./contact";
 import { TitlePeriod } from "./TitlePeriod";
+import { EducationFaq } from "./EducationFaq";
 import styles from "./workflow-home.module.css";
 
-const programs = [
-  { number: "01", title: "AI를 일의 흐름 안으로", topic: "AI 워크플로우 · 업무 자동화", description: "리서치, 아이디어 정리, 문서 작성. 반복되는 업무를 찾아 AI를 연결하고, 결과를 검토하는 기준까지 함께 설계합니다.", audience: "디자이너 · PM · IT 실무자", output: "업무별 AI 활용 흐름과 검토 체크리스트" },
-  { number: "02", title: "다시 만들지 않는 디자인", topic: "Figma · 디자인 시스템", description: "개별 화면 제작을 넘어 컴포넌트와 변수, 라이브러리 운영 방식을 정리합니다. 팀이 함께 쓰고 유지할 수 있는 작업 기준을 만듭니다.", audience: "디자이너 · 디자인 리드", output: "재사용 가능한 컴포넌트 구조와 운영 기준" },
-  { number: "03", title: "전달에서 끊기지 않는 협업", topic: "기획 · 디자인 · 개발 연결", description: "요구사항부터 프로토타입, 개발 전달까지. 직군 사이에서 반복되는 설명과 수정 요청을 살펴보고 협업 과정을 정리합니다.", audience: "PM · 디자이너 · 개발자", output: "핸드오프 체크리스트와 팀 협업 가이드" },
-];
 const resources = [
   ["AI & Figma 실무 팁", "막히는 작업에서 바로 찾아보는 Q&A", "/figma-info"],
   ["프롬프트 피디아", "업무에 맞게 바꿔 쓰는 프롬프트", "/prompt-pedia"],
@@ -34,21 +32,23 @@ export function WorkflowHome() {
       <Approach />
 
       <section id="programs" className={styles.programs} aria-labelledby="programs-heading">
-        <div className={styles.sectionHeading}><div><h2 id="programs-heading">디자이너와 IT 팀을 위한<span className={styles.programTitleBreak}> </span>실무 맞춤<span className={styles.desktopTitleSpace}> </span>교육<TitlePeriod /></h2></div><p>팀의 과제와 숙련도에 따라<br />교육과 컨설팅의 범위를 함께 정합니다.</p></div>
-        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={CONTACT_URL}>이 주제로 문의하기</a></div></article>)}</div>
+        <div className={styles.sectionHeading}><div><h2 id="programs-heading">디자이너와 IT 팀을 위한<span className={styles.programTitleBreak}> </span>실무 맞춤<span className={styles.desktopTitleSpace}> </span>교육<TitlePeriod /></h2></div><p>우리 팀의 실제 업무로 배우고,<br />현업에 적용할 AI 워크플로우를 만듭니다.</p></div>
+        <div>{programs.map(program => <article className={styles.program} key={program.number}><span className={styles.programNumber}>{program.number}</span><div><span className={styles.topic}>{program.topic}</span><h3>{program.href ? <Link className={styles.programTitleLink} href={program.href}><span style={{ whiteSpace: "pre-line" }}>{program.title}</span><ArrowUpRight size={21} aria-hidden="true" /></Link> : program.title}</h3><p>{program.description}</p></div><div className={styles.programDetails}><span>함께하는 대상</span><p>{program.audience}</p><span>함께 만들 결과물</span><p>{program.output}</p><a href={CONTACT_URL}>이 주제로 문의하기</a></div></article>)}</div>
       </section>
 
       <LectureHistory />
 
-      <section className={styles.process} aria-labelledby="process-heading"><div className={styles.sectionHeading}><div><h2 id="process-heading">배운 다음 날에도<br />이어지는 변화<TitlePeriod /></h2></div><p>한 번의 강의부터 팀 단위 컨설팅까지.<br />필요한 깊이에 맞춰 함께합니다.</p></div><ol className={styles.processSteps}>{[
-        ["진단", "지금의 업무를 이해합니다", "참여 직군, 사용하는 도구, 반복되는 작업과 협업의 어려움을 살펴봅니다."],
-        ["설계와 교육", "우리 팀의 사례로 배웁니다", "실제 과제를 바탕으로 커리큘럼을 구성하고, 적용 방법을 함께 실습합니다."],
-        ["적용과 정리", "계속 쓸 수 있게 남깁니다", "실습 결과를 검토하고 템플릿과 가이드로 정리합니다. 후속 지원 범위는 협의합니다."],
+      <section className={styles.process} aria-labelledby="process-heading"><div className={styles.sectionHeading}><div><h2 id="process-heading">모든 교육은 컨설팅 후<br />조직 맞춤형으로 기획 및 진행됩니다<TitlePeriod /></h2></div><p>한 번의 강의부터 팀 단위 컨설팅까지.<br />필요한 깊이에 맞춰 함께합니다.</p></div><ol className={styles.processSteps}>{[
+        ["진단", "현재 조직에서 겪고 있는 문제를 파악합니다.", "참여 직군, 사용하는 도구, 반복되는 작업과 협업의 어려움을 살펴봅니다."],
+        ["설계와 교육", "문제를 해결하기 위한 커리큘럼 및 교안/실습 제작", "컨설팅 단계에서 확인한 문제를 해결하기 위한 커리큘럼 및 교안, 실습 과제가 제작됩니다."],
+        ["적용과 정리", "계속 쓸 수 있게 남깁니다", "실무에서 적용하는 방법을 배워보고, 계속 사용할 수 있는 템플릿과 가이드로 남깁니다. 컨설팅 등 추가 후속 지원 범위도 협의 가능합니다."],
       ].map(([label, title, description], i) => <li key={label}><div className={styles.processLabel}><span>0{i + 1} / {label}</span>{i < 2 && <ArrowRight size={20} />}</div><h3>{title}</h3><p>{description}</p></li>)}</ol></section>
 
       <section id="resources" className={styles.resources} aria-labelledby="resources-heading"><div className={styles.sectionHeading}><div><h2 id="resources-heading">오늘의 업무부터, 한 걸음 더<TitlePeriod /></h2></div><p>실무에서 바로 꺼내 쓰는 지식과 도구.<br />필요한 정보를 찾아보세요.</p></div><a className={styles.resourceCta} href="https://huddling.ai/">실무자료실에서 검색하기</a><div className={styles.resourceList}>{resources.map(([title, description, href]) => <a key={href} href={`https://huddling.ai${href}`}><div><h3>{title}</h3><p>{description}</p></div><ArrowUpRight size={20} /></a>)}</div><div className={styles.community}><p>함께 배우고 실험하는 동료가 필요하다면</p><a href="https://huddling.club/">허들링 클럽 둘러보기 <ArrowUpRight size={17} /></a></div></section>
 
-      <section id="contact" className={styles.contact} aria-labelledby="contact-heading"><h2 id="contact-heading">진짜 일을 잘 하는 팀은<br />늘 더 잘하는 방법을 고민합니다<TitlePeriod /></h2><p>지금 겪고 있는 업무의 어려움을 들려주세요.<br />팀에 맞는 교육과 컨설팅의 방향을 함께 찾겠습니다.</p><a href={CONTACT_URL} className={styles.contactButton}>교육·컨설팅 문의하기</a><div className={styles.contactNote}><span>참여 직군 · 개선하고 싶은 업무 · 희망 일정</span><span>문의 폼에 남겨주시면 구체적으로 논의할 수 있습니다.</span></div><a className={styles.email} href="mailto:yiseo@figmatutor.info">yiseo@figmatutor.info</a></section>
+      <EducationFaq />
+
+      <section id="contact" className={styles.contact} aria-labelledby="contact-heading"><h2 id="contact-heading">진짜 일을 잘 하는 팀은<br />항상 다음을 준비합니다<TitlePeriod /></h2><p>지금 겪고 있는 업무의 어려움을 들려주세요.<br />팀에 맞는 교육과 컨설팅의 방향을 함께 찾겠습니다.</p><a href={CONTACT_URL} className={styles.contactButton}>교육·컨설팅 문의하기</a><div className={styles.contactNote}><span>참여 직군 · 개선하고 싶은 업무 · 희망 일정</span><span>문의 폼에 남겨주시면 구체적으로 논의할 수 있습니다.</span></div><a className={styles.email} href="mailto:yiseo@figmatutor.info">yiseo@figmatutor.info</a></section>
       <Footer />
     </div>
   );
