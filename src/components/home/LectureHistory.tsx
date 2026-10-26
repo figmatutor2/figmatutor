@@ -7,7 +7,7 @@ import { TitlePeriod } from "./TitlePeriod";
 import styles from "./lecture-history.module.css";
 
 const categories = ["전체", ...new Set(history.lectures.map(lecture => lecture.category))];
-const featuredNames = ["NHN", "카카오", "삼성SDS", "우아한형제들 (배달의민족)"];
+const featuredNames = ["NHN", "LG유플러스", "카카오", "삼성SDS", "우아한형제들 (배달의민족)"];
 const featured = featuredNames.map(name => history.lectures.find(lecture => lecture.organization === name)!);
 const consulting = history.lectures.find(lecture => lecture.organization === "더워터멜론")!;
 
