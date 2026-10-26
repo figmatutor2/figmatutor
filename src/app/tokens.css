@@ -1,0 +1,76 @@
+/* Design tokens — principles adapted from src/docs/design.md (Apple-style restraint),
+   keeping Figmatutor's own palette: black action color + brand blue accent. */
+:root {
+  /* Surface */
+  --color-canvas: oklch(1 0 0);
+  --color-paper: oklch(0.979 0 250);
+  --color-parchment: oklch(0.955 0.002 260);
+  --color-surface-dark: oklch(0.23 0 265);
+  --color-surface-dark-hover: oklch(0.3 0 265);
+  --color-surface-black: oklch(0.209 0 0);
+  --color-hover-soft: oklch(0.946 0 0);
+  --color-on-dark-hover: oklch(0.9 0 265);
+  --color-frosted: oklch(0.979 0 250 / 0.8);
+
+  /* Text */
+  --color-ink: oklch(0.235 0 260);
+  --color-muted: oklch(0.47 0 260);
+  --color-on-dark: oklch(0.979 0 250);
+  --color-on-dark-muted: oklch(0.76 0 255);
+
+  /* Action & brand */
+  --color-action: oklch(0.244 0 0);
+  --color-action-hover: oklch(0.341 0 0);
+  --color-brand: oklch(0.494 0.285 266.6);
+
+  /* Lines */
+  --color-line: oklch(0.86 0 255);
+  --color-line-strong: oklch(0.738 0 0);
+  --color-line-on-dark: oklch(0.4 0 265);
+  --color-line-on-dark-strong: oklch(0.65 0 265);
+
+  /* Spacing — 8px base */
+  --spacing-xxs: 4px;
+  --spacing-xs: 8px;
+  --spacing-sm: 12px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-section: 96px;
+  --spacing-section-sm: 64px;
+
+  /* Typography */
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-semibold: 600;
+  --text-hero: clamp(28px, 5.4vw, 60px);
+  --text-display: clamp(28px, 3vw, 40px);
+  --text-display-contact: clamp(28px, 4vw, 48px);
+  --text-display-sm: 28px;
+  --text-title-lg: 28px;
+  --text-title-md: 24px;
+  --text-title: 21px;
+  --text-body-lg: 17px;
+  --text-caption: 14px;
+  --tracking-display: -0.035em;
+  --tracking-title: -0.025em;
+  --leading-display: 1.25;
+  --leading-body: 1.75;
+
+  /* Shape */
+  --radius-sm: 8px;
+  --radius-lg: 18px;
+  --radius-pill: 9999px;
+
+  /* Effects & motion */
+  --blur-frosted: saturate(180%) blur(20px);
+  --press-scale: 0.95;
+  --duration-fast: 0.2s;
+}
+
+/* next/font sets --font-pretendard on <body>, so the font token must resolve there, not on :root. */
+body {
+  --font-sans: var(--font-pretendard), system-ui, -apple-system, sans-serif;
+}
