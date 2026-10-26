@@ -55,6 +55,9 @@
   --gutter-sm: 24px;
   --gutter-footer: clamp(40px, 8.333vw, 160px);
   --header-offset: 110px;
+  --header-height: 88px;
+  --header-height-md: 76px;
+  --header-height-sm: 96px;
   --size-touch: 44px;
   --size-button: 52px;
 
@@ -64,6 +67,7 @@
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
   --text-hero: clamp(28px, 5.4vw, 60px);
+  --text-page-title: clamp(32px, 4.5vw, 56px);
   --text-display: clamp(28px, 3vw, 40px);
   --text-display-contact: clamp(28px, 4vw, 48px);
   --text-display-sm: 28px;
