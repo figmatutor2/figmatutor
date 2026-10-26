@@ -8,12 +8,12 @@
   backdrop-filter: var(--blur-frosted);
   color: var(--color-ink);
   border-bottom: 1px solid var(--color-line);
-  padding-inline: max(6vw, calc((100vw - 1280px) / 2));
+  padding-inline: var(--gutter);
 }
 .row {
   display: flex;
   align-items: center;
-  gap: 30px;
+  gap: var(--spacing-xl);
   min-height: 88px;
 }
 .logo {
@@ -21,17 +21,17 @@
   flex-direction: column;
   align-items: flex-start;
   min-width: 0;
-  gap: 2px;
+  gap: var(--spacing-xxxs);
 }
 .logo span {
   max-width: 250px;
-  line-height: 1.45;
+  line-height: var(--leading-snug);
   word-break: keep-all;
   display: block;
-  margin-top: 2px;
-  font-size: 10px;
-  letter-spacing: 0.02em;
-  font-weight: 450;
+  margin-top: var(--spacing-xxxs);
+  font-size: var(--text-micro);
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--font-weight-regular);
   color: var(--color-muted);
 }
 .desktop {
@@ -39,10 +39,10 @@
   gap: var(--spacing-lg);
   align-items: center;
   margin-left: auto;
-  font-size: 13px;
+  font-size: var(--text-caption);
 }
 .desktop a {
-  padding-block: 15px;
+  padding-block: var(--spacing-md);
 }
 .desktop a:hover {
   color: var(--color-action);
@@ -53,9 +53,9 @@
   display: flex;
   align-items: center;
   gap: var(--spacing-sm);
-  min-height: 44px;
-  padding: 0 18px;
-  font-size: 12px;
+  min-height: var(--size-touch);
+  padding: 0 var(--spacing-ml);
+  font-size: var(--text-small);
   font-weight: var(--font-weight-semibold);
   border: 1px solid var(--color-action);
   border-radius: var(--radius-pill);
@@ -76,13 +76,13 @@
 .toggle {
   flex-shrink: 0;
   display: none;
-  width: 44px;
-  height: 44px;
+  width: var(--size-touch);
+  height: var(--size-touch);
   align-items: center;
   justify-content: center;
 }
 .mobile {
-  padding-block: 8px 18px;
+  padding-block: var(--spacing-xs) var(--spacing-ml);
 }
 .mobile[hidden] {
   display: none;
@@ -91,24 +91,24 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  min-height: 50px;
-  font-size: 15px;
+  min-height: var(--size-button);
+  font-size: var(--text-body-md);
   border-top: 1px solid var(--color-line);
 }
 .header a:focus-visible,
 .header button:focus-visible {
   outline: 2px solid var(--color-action);
-  outline-offset: 4px;
+  outline-offset: var(--spacing-xxs);
 }
 .skip {
   position: absolute;
   top: -70px;
   background: var(--color-action);
   color: var(--color-on-dark);
-  padding: 12px;
+  padding: var(--spacing-sm);
 }
 .skip:focus {
-  top: 8px;
+  top: var(--spacing-xs);
 }
 @media (max-width: 1080px) {
   .desktop {
@@ -121,17 +121,17 @@
     display: flex;
   }
   .row {
-    gap: 12px;
+    gap: var(--spacing-sm);
     min-height: 76px;
   }
 }
 @media (max-width: 540px) {
   .header {
-    padding-inline: 22px;
+    padding-inline: var(--gutter-sm);
   }
   .row {
     min-height: 96px;
-    gap: 8px;
+    gap: var(--spacing-xs);
   }
   .logo span {
     max-width: 174px;
@@ -142,8 +142,8 @@
     height: auto;
   }
   .contact {
-    padding-inline: 12px;
-    gap: 6px;
+    padding-inline: var(--spacing-md);
+    gap: var(--spacing-xs);
   }
 }
 @media (min-width: 1081px) {
