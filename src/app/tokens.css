@@ -109,6 +109,7 @@
   --shadow-float: 0 10px 24px oklch(0.235 0 260 / 0.28);
   --press-scale: 0.95;
   --duration-fast: 0.2s;
+  --duration-base: 0.3s;
 }
 
 /* next/font sets --font-pretendard on <body>, so the font token must resolve there, not on :root. */

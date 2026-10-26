@@ -4,7 +4,6 @@ import { useId, useState } from "react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
 import { educationFaqs } from "./education-content";
-import { TitlePeriod } from "./TitlePeriod";
 import styles from "./workflow-home.module.css";
 
 export function EducationFaq() {
@@ -13,7 +12,7 @@ export function EducationFaq() {
   return (
     <section id="faq" className={styles.faq} aria-labelledby="faq-heading">
       <div className={styles.sectionHeading}>
-        <h2 id="faq-heading">AI 교육, 자주 묻는 질문<TitlePeriod /></h2>
+        <h2 id="faq-heading">AI 교육 하기 전에<br />궁금한 점이 있으신가요?</h2>
         <p>교육 진행부터 실습 범위까지.<br />우리 팀에 맞는 교육을 확인하세요.</p>
       </div>
       <div className={styles.faqList}>

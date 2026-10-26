@@ -68,9 +68,9 @@ export function LectureHistory() {
       <div className={styles.heading}>
         <div>
           <h2 id="experience-heading">
-            다양한 조직의 현장에서
+            약 100개의 조직을 반복적으로 교육하며
             <br />
-            쌓아온 교육 경험
+            커리큘럼을 검증해 왔습니다
             <TitlePeriod />
           </h2>
         </div>

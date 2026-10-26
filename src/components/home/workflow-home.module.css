@@ -535,14 +535,6 @@
   }
 }
 
-@media (max-width: 540px) {
-  .programTitleBreak {
-    display: block;
-  }
-  .desktopTitleSpace {
-    display: none;
-  }
-}
 
 .programDetails p {
   white-space: pre-line;
@@ -636,23 +628,54 @@
   }
 }
 
-/* Reveal the inquiry CTA on row hover/focus for mouse users; touch devices keep it visible. */
+/* "상세 내용 확인하기" expands the row on hover/focus for mouse users; touch devices show it open. */
+.programMore {
+  display: grid;
+  grid-template-rows: 1fr;
+}
+.programMore > div {
+  min-height: 0;
+  overflow: hidden;
+  /* Horizontal room so the focus outline isn't clipped. */
+  padding-inline: var(--spacing-xs);
+  margin-inline: calc(-1 * var(--spacing-xs));
+}
+.programMoreLink {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--size-touch);
+  margin-block: var(--spacing-sm) var(--spacing-xs);
+  font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+.programMoreLink:hover {
+  text-decoration-thickness: 2px;
+}
 @media (hover: hover) and (pointer: fine) {
-  .programDetails a {
-    opacity: 0;
-    transition:
-      opacity var(--duration-fast) ease,
-      background-color var(--duration-fast) ease,
-      border-color var(--duration-fast) ease,
-      transform var(--duration-fast) ease;
+  .programMore {
+    grid-template-rows: 0fr;
+    transition: grid-template-rows var(--duration-base) ease;
   }
-  .program:hover .programDetails a,
-  .program:focus-within .programDetails a {
+  .programMore > div {
+    opacity: 0;
+    transition: opacity var(--duration-base) ease;
+  }
+  .program:hover .programMore,
+  .program:focus-within .programMore {
+    grid-template-rows: 1fr;
+  }
+  .program:hover .programMore > div,
+  .program:focus-within .programMore > div {
     opacity: 1;
   }
 }
-@media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: reduce) {
-  .programDetails a {
+@media (prefers-reduced-motion: reduce) {
+  .programMore,
+  .programMore > div {
     transition: none;
   }
 }
