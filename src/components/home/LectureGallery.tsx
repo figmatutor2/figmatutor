@@ -30,11 +30,6 @@ export function LectureGallery() {
     <div className={styles.gallery}>
       <div className={styles.intro}>
         <h3>강의 현장</h3>
-        <p>
-          직접 진행한 강의의 현장 기록입니다.
-          <br />
-          수강생 얼굴은 블러 처리했습니다.
-        </p>
       </div>
       <ul className={styles.strip} aria-label="강의 현장 사진">
         {photos.map((photo, i) => (

@@ -75,11 +75,6 @@ export function LectureHistory() {
             <TitlePeriod />
           </h2>
         </div>
-        <p>
-          기업과 플랫폼, 대학과 공공기관까지.
-          <br />
-          2022년부터 이어온 강의와 자문 이력을 소개합니다.
-        </p>
       </div>
       <div className={styles.selected}>
         <div className={styles.selectedIntro}>
