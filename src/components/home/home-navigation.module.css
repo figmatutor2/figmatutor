@@ -40,6 +40,7 @@
   align-items: center;
   margin-left: auto;
   font-size: var(--text-caption);
+  font-weight: var(--font-weight-semibold);
 }
 .desktop a {
   padding-block: var(--spacing-md);
