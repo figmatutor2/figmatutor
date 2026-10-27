@@ -6,7 +6,9 @@
     "다빈치",
     "제로베이스",
     "온오프믹스",
-    "네이버Z"
+    "네이버Z",
+    "단군소프트",
+    "듀오톤"
   ],
   "addOrganizations": [
     {
@@ -26,6 +28,12 @@
       "category": "커뮤니티·컨퍼런스",
       "period": "2026-08",
       "frequency": "공식 메이커톤 운영"
+    },
+    {
+      "organization": "Cursor Meetup Seoul",
+      "category": "커뮤니티·컨퍼런스",
+      "period": "2025-10",
+      "frequency": "연사 참여"
     }
   ],
   "updateOrganizations": {

@@ -265,12 +265,6 @@
       "frequency": "2회"
     },
     {
-      "organization": "단군소프트",
-      "category": "IT·플랫폼",
-      "period": "2025-01",
-      "frequency": "주간 과정"
-    },
-    {
       "organization": "시엔티테크",
       "category": "IT·플랫폼",
       "period": "2025-07",
@@ -451,12 +445,6 @@
       "frequency": "4회"
     },
     {
-      "organization": "듀오톤",
-      "category": "기타 기업",
-      "period": "2023-12",
-      "frequency": "1회"
-    },
-    {
       "organization": "더디엔에이",
       "category": "기타 기업",
       "period": "2025-09",
@@ -611,6 +599,12 @@
       "category": "커뮤니티·컨퍼런스",
       "period": "2026-08",
       "frequency": "공식 메이커톤 운영"
+    },
+    {
+      "organization": "Cursor Meetup Seoul",
+      "category": "커뮤니티·컨퍼런스",
+      "period": "2025-10",
+      "frequency": "연사 참여"
     }
   ],
   "advisory": [
