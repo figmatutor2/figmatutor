@@ -29,7 +29,7 @@
   word-break: keep-all;
   display: block;
   margin-top: var(--spacing-xxxs);
-  font-size: var(--text-micro);
+  font-size: var(--text-fine);
   letter-spacing: var(--tracking-wide);
   font-weight: var(--font-weight-regular);
   color: var(--color-muted);

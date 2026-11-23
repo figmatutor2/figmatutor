@@ -255,7 +255,7 @@
 }
 .programDetails > span {
   display: block;
-  font-size: var(--text-micro);
+  font-size: var(--text-fine);
   line-height: var(--leading-snug);
   color: var(--muted);
 }
@@ -366,7 +366,7 @@
   letter-spacing: var(--tracking-title);
 }
 .resourceList p {
-  font-size: var(--text-small);
+  font-size: var(--text-body);
   margin-top: var(--spacing-xs);
 }
 .resourceList a:hover h3 {
@@ -510,7 +510,7 @@
   background: var(--color-parchment);
 }
 .clientStrip p {
-  font-size: var(--text-caption);
+  font-size: var(--text-body);
   line-height: var(--leading-relaxed);
   color: var(--muted);
 }
@@ -535,7 +535,7 @@
     gap: var(--spacing-xs);
   }
   .clientStrip p {
-    font-size: var(--text-small);
+    font-size: var(--text-body);
   }
 }
 

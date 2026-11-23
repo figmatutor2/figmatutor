@@ -99,7 +99,7 @@
   }
   .details {
     display: block;
-    font-size: var(--text-small);
+    font-size: var(--text-body);
   }
   .details > div,
   .details dt,
