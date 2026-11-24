@@ -181,7 +181,7 @@
 }
 .agents .output {
   margin-top: var(--spacing-sm);
-  font-size: var(--text-caption);
+  font-size: var(--text-body);
 }
 .output span {
   display: block;
@@ -190,7 +190,7 @@
   margin-bottom: var(--spacing-xxs);
 }
 .note {
-  font-size: var(--text-caption);
+  font-size: var(--text-body);
   color: var(--muted);
   line-height: var(--leading-relaxed);
   border-top: 1px solid var(--line);
