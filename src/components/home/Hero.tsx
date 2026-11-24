@@ -1,5 +1,6 @@
 "use client";
 
+import { FloatingIcons, ToolStackGrid } from "@/components/ui/floating-icons";
 import { CONTACT_URL } from "./contact";
 import { TitlePeriod } from "./TitlePeriod";
 import styles from "./workflow-home.module.css";
@@ -9,6 +10,7 @@ const titles = ["AI+Figma 효율화 교육", "워크플로우 효율화 교육",
 export function Hero() {
   return (
     <section className={styles.hero} aria-labelledby="home-heading">
+      <FloatingIcons className="hidden md:block" />
       <div className={styles.heroContent}>
         <h1 id="home-heading" className={styles.heroTitle}>
           <span className={styles.srOnly}>실무에 바로 적용하는 AI+Figma 효율화, 워크플로우 효율화, 업무 자동화 교육</span>
@@ -25,6 +27,9 @@ export function Hero() {
         <div className={styles.actions}>
           <a className={styles.primary} href={CONTACT_URL}>교육·컨설팅 문의</a>
           <a className={styles.secondary} href="#programs">교육 프로그램 살펴보기</a>
+        </div>
+        <div className={styles.toolStack}>
+          <ToolStackGrid />
         </div>
       </div>
     </section>

@@ -28,11 +28,19 @@
   padding-inline: var(--gutter);
 }
 .hero {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100svh;
   padding-block: var(--spacing-hero-top) var(--spacing-section);
   text-align: center;
   background: var(--color-canvas);
 }
 .heroContent {
+  position: relative;
+  z-index: 1;
   max-width: 1080px;
   margin-inline: auto;
 }
@@ -103,6 +111,17 @@
   line-height: var(--leading-relaxed);
   color: var(--muted);
   letter-spacing: var(--tracking-title);
+}
+/* 모바일 전용 툴 아이콘 그리드 (데스크톱은 FloatingIcons) */
+.toolStack {
+  display: none;
+}
+@media (max-width: 767px) {
+  .toolStack {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+  }
 }
 .actions {
   display: flex;
@@ -463,6 +482,7 @@
     padding-inline: var(--gutter-sm);
   }
   .hero {
+    min-height: auto;
     padding-block: var(--spacing-hero-top-sm) var(--spacing-section-sm);
   }
   .intro {
