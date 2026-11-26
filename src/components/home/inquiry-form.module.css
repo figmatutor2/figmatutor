@@ -125,6 +125,17 @@
 .done .button {
   margin-top: var(--spacing-md);
 }
+@media (prefers-reduced-motion: reduce) {
+  .button,
+  .field input,
+  .field select,
+  .field textarea {
+    transition: none;
+  }
+  .button:active {
+    transform: none;
+  }
+}
 @media (max-width: 640px) {
   .section {
     padding-left: var(--gutter-sm);
